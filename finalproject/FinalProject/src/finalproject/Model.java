@@ -16,32 +16,64 @@ public class Model {
         return user.getfName();
     }
     
+    private void setFName(String fName) {
+        user.setfName(fName);
+    }
+    
     private String getLName() {
         return user.getlName();
     }
     
+    private void setLName(String lName) {
+        user.setlName(lName);
+    }
+    
     private int getAge() {
-        return(user.getAge());
+        return user.getAge();
+    }
+    
+    private void setAge(int age) {
+        user.setAge(age);
     }
     
     private String getAddress() {
-        return(user.getAddress());
+        return user.getAddress();
+    }
+    
+    private void setAddress(String address) {
+        user.setAddress(address);
     }
     
     private String getEmail() {
-        return(user.getEmail());
+        return user.getEmail();
+    }
+    
+    private void setEmail(String email) {
+        user.setEmail(email);
     }
     
     private String getUsername() {
-        return(user.getUsername());
+        return user.getUsername();
+    }
+    
+    private void setUsername(String username) {
+        user.setUsername(username);
     }
     
     private String getPassword() {
-        return(user.getPassword());
+        return user.getPassword();
+    }
+    
+    private void setPassword(String password) {
+        user.setPassword(password);
     }
     
     private String getCompany() {
-        return(user.getCompany());
+        return user.getCompany();
+    }
+    
+    private void setCompany(String company) {
+        user.setCompany(company);
     }
     
 }

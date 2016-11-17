@@ -15,19 +15,16 @@ import javax.swing.JPanel;
  *
  * @author nkc5101
  */
-public class ButtonsPanel extends JPanel{
+public class NavPanel extends JPanel{
+    private JButton optionsButton;
+    private JButton instructionsButton;
+    private JButton creditsButton;
+    private JButton homeButton;
+    private JButton profileButton;
+    private JButton payrollButton;
+    private JButton logoffButton;
     
-  
-    
-   private JButton optionsButton;
-   private JButton instructionsButton;
-   private JButton creditsButton;
-   private JButton homeButton;
-   private JButton profileButton;
-   private JButton payrollButton;
-   private JButton logoffButton;
-    
-    ButtonsPanel(){
+    NavPanel(){
         optionsButton = new JButton("Options");
         instructionsButton = new JButton("Instructions");
         creditsButton = new JButton("Credits");
@@ -45,5 +42,4 @@ public class ButtonsPanel extends JPanel{
         add(logoffButton);
     }
 
-    
 }

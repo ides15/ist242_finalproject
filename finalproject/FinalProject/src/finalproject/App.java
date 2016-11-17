@@ -9,7 +9,7 @@ package finalproject;
  *
  * @author John Ide | JCI5048 | PSU 2018
  */
-public class Main {
+public class App {
     Model model = new Model();
     View view = new View(model);
     Controller controller = new Controller(model, view);

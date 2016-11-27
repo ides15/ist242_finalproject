@@ -5,10 +5,29 @@
  */
 package finalproject;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JFrame;
+
 /**
  *
  * @author John Ide | JCI5048 | PSU 2018
  */
-public class Controller {
+public class Controller implements ActionListener {
+    View view;
+    Model model;
+    
+    Controller(){
+        view.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        view.setSize(600,600);
+        view.setVisible(true);
+        
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
+    }
+    
     
 }

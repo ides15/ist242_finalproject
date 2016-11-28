@@ -16,7 +16,7 @@ public class SplashPanel extends JPanel {
     JLabel optionsLabel;
     
     SplashPanel() {
-        splashPictureButton = new JButton(new ImageIcon("scr/images/dollareyes.jpg"));
+        splashPictureButton = new JButton(new ImageIcon("src/images/dollareyes.png"));
         add(splashPictureButton);
         
         optionsLabel = new JLabel("No options selected.");

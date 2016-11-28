@@ -51,7 +51,7 @@ public class View extends JFrame{
         this.model = model;
         welcomeLabel = new JLabel();
         
-        welcomeLabel.setText("Welcome to our Application!");
+        welcomeLabel = new JLabel().setText("Welcome to our Application!");
         add(welcomeLabel);
     }
     

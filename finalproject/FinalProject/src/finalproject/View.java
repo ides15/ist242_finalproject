@@ -5,7 +5,7 @@
  */
 package finalproject;
 
-import java.awt.event.ActionListener;
+import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -17,6 +17,9 @@ import javax.swing.JTextField;
  */
 public class View extends JFrame{
     private Model model;
+    
+    private NavPanel nav;
+    private SplashPanel splash;
     
     // BUTTONS  
     private JButton homeButton;
@@ -48,10 +51,15 @@ public class View extends JFrame{
     private JTextField name;
     
     public View(Model model){
-        this.model = model;
-        welcomeLabel = new JLabel("Welcome to our Application!");
         
-        add(welcomeLabel);
+        super();
+        setLayout(new BorderLayout());
+        
+        nav = new NavPanel();
+        splash = new SplashPanel();
+        
+        add(nav, BorderLayout.SOUTH);
+        add(splash, BorderLayout.CENTER);
     }
     
     public JButton getProfile(){

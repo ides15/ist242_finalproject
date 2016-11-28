@@ -27,6 +27,8 @@ public class NavPanel extends JPanel{
     
     NavPanel(){
         
+        
+        
         optionsButton = new JButton("Options");
         instructionsButton = new JButton("Instructions");
         creditsButton = new JButton("Credits");

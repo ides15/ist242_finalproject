@@ -12,7 +12,7 @@ import javax.swing.JFrame;
  *
  * @author John Ide | JCI5048 | PSU 2018
  */
-public class View extends JFrame{
+public class View extends JFrame {
     private Model model;
     
     private NavPanel nav;

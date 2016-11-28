@@ -13,13 +13,23 @@ import javax.swing.*;
  */
 public class SplashPanel extends JPanel {
     JButton splashPictureButton;
+    JButton loginButton;
+        
     JLabel optionsLabel;
     
     SplashPanel() {
+        setLayout(null);
+        
         splashPictureButton = new JButton(new ImageIcon("src/images/dollareyes.png"));
         add(splashPictureButton);
+        splashPictureButton.setBounds(125, 50, 350, 350);
         
         optionsLabel = new JLabel("No options selected.");
         add(optionsLabel);
+        optionsLabel.setBounds(250, 400, 200, 50);
+        
+        loginButton = new JButton("Login");
+        add(loginButton);
+        loginButton.setBounds(250, 465, 100, 30);
     }
 }

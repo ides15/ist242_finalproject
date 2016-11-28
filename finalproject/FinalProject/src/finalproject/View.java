@@ -18,6 +18,8 @@ public class View extends JFrame {
     private NavPanel nav;
     private SplashPanel splash;
     
+    private InstructionsPanel i_panel;
+    
     public View(Model model){
         
         super();
@@ -28,6 +30,14 @@ public class View extends JFrame {
         
         add(nav, BorderLayout.SOUTH);
         add(splash, BorderLayout.CENTER);
+        
+    }
+    
+    public void addInstructions(InstructionsPanel i_panel) {
+        
+        this.i_panel = i_panel;
+        
+        
         
     }
     

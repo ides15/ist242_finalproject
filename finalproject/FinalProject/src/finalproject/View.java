@@ -47,8 +47,11 @@ public class View extends JFrame{
     private JTextField address;
     private JTextField name;
     
-    View(){
+    public View(Model model){
+        this.model = model;
         
+        welcomeLabel.setText("Welcome to our Application!");
+        add(welcomeLabel);
     }
     
     public JButton getProfile(){
@@ -59,7 +62,7 @@ public class View extends JFrame{
         return loginButton;
     }
     
-    public JButton getcCreateUser(){
+    public JButton getCreateUser(){
         return createUserButton;
     }
     
@@ -82,6 +85,5 @@ public class View extends JFrame{
     public JButton getLogoff(){
         return logoffButton;
     }
-    
     
 }

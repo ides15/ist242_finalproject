@@ -22,10 +22,9 @@ public class Controller implements ActionListener {
         this.model = model;
         this.view = view;
         
-        GridLayout grid = new GridLayout(7, 3);
-        view.setLayout(grid);
         
-        view.setTitle("Application");        
+        
+        view.setTitle("Payroll System");        
         view.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         view.setSize(600,600);
         

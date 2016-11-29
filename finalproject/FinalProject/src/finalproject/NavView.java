@@ -40,6 +40,7 @@ public class NavView extends JFrame {
     
     public void switchToInstructionsPanel(InstructionsPanel i_panel) {
         
+        navViewPanel.removeSplash();
         navViewPanel.removeMainView();
         navViewPanel.addInstructionsPanel(i_panel);
         

@@ -18,11 +18,14 @@ import javax.swing.JTextField;
  */
 public class OptionsView extends JPanel {
     
-    private JLabel options;
+    public JLabel fontSizeLabel;
+    public JLabel pageSizeLabel;
+    public JLabel summaryLabel;
     
-    private JTextField backgroundColor;
+    public JTextField backgroundColor;
     
-    private JSlider fontSize;
+    public JSlider fontSize;
+    public JSlider pageSize;
     
     private JButton saveButton;
     private JButton returnButton;
@@ -35,21 +38,33 @@ public class OptionsView extends JPanel {
         
         backgroundColor = new JTextField("Set the background color");
         
-        options = new JLabel("Choose the font size");
+        fontSizeLabel = new JLabel("Choose the font size");
+        
+        pageSizeLabel = new JLabel("Choose the page size");
         
         fontSize = new JSlider(JSlider.HORIZONTAL, 1, 10, 5);
         fontSize.setMajorTickSpacing(1);
         fontSize.setPaintLabels(true);
         fontSize.setPaintTicks(true); 
         
+        pageSize = new JSlider(JSlider.HORIZONTAL, 1, 10, 5);
+        pageSize.setMajorTickSpacing(1);
+        pageSize.setPaintLabels(true);
+        pageSize.setPaintTicks(true);
+        
         saveButton = new JButton("Save");
         returnButton = new JButton("Return");
         
+        summaryLabel = new JLabel("summary");
+        
         add(backgroundColor);
-        add(options);
+        add(fontSizeLabel);
         add(fontSize);
+        add(pageSizeLabel);
+        add(pageSize);
         add(saveButton);
         add(returnButton);
+        add(summaryLabel);
         
     }
     

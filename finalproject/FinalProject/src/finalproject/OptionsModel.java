@@ -26,16 +26,16 @@ public class OptionsModel {
     
     public void saveOptionsInfo(String backgroundColor, int fontSize, int pageSize) {
         
-        this.setBackgroundColor(backgroundColor);
-        this.setFontSize(fontSize);
-        this.setPageSize(pageSize);
+        setBackgroundColor(backgroundColor);
+        setFontSize(fontSize);
+        setPageSize(pageSize);
         
     }
     
     public String returnOptionsInfo() {
         
-        return "Background color: " + this.getBackgroundColor() + ", font size: "
-                + this.getFontSize() + ", page size: " + this.getPageSize();
+        return "Background color: " + getBackgroundColor() + ", font size: "
+                + getFontSize() + ", page size: " + getPageSize();
         
     }
 

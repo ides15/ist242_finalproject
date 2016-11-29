@@ -21,17 +21,23 @@ public class OptionsController {
         
         this.optionsModel = optionsModel;
         this.optionsView = optionsView;
-                
+              
+        optionsView.addSaveButtonListener(new SaveButtonListener());
+        optionsView.addReturnButtonListener(new ReturnButtonListener());
+        
     }
+    
+    //make the bottom two classes into one
     
     public class SaveButtonListener implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
             
-            optionsModel.saveOptionsInfo(optionsModel.getBackgroundColor(),
-                    optionsModel.getFontSize(), optionsModel.getPageSize());
-            
+            optionsModel.saveOptionsInfo(optionsView.backgroundColor.getText(), 
+                    optionsView.fontSize.getValue(), 
+                    optionsView.pageSize.getValue());
+                        
         }
         
     }
@@ -41,8 +47,8 @@ public class OptionsController {
         @Override
         public void actionPerformed(ActionEvent e) {
             
-            
-            
+            optionsView.summaryLabel.setText(optionsModel.returnOptionsInfo());
+                        
         }
         
     }

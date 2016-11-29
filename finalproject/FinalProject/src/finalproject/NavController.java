@@ -21,6 +21,7 @@ public class NavController {
     private HomePanel homePanel;
     private InstructionsPanel instructionsPanel;
     private CreditsPanel creditsPanel;
+    private OptionsPanel optionsPanel;
     
     public NavController(NavModel navModel, NavView navView) {
         
@@ -30,10 +31,12 @@ public class NavController {
         homePanel = new HomePanel();
         instructionsPanel = new InstructionsPanel();
         creditsPanel = new CreditsPanel();
+        optionsPanel = new OptionsPanel();
         
         navView.addInstructionsButtonListener(new InstructionsButtonListener());
         navView.addHomeButtonListener(new HomeButtonListener());
         navView.addCreditsButtonListener(new CreditsButtonListener());
+        navView.addOptionsButtonListener(new OptionsButtonListener());
         
     }
     
@@ -58,12 +61,26 @@ public class NavController {
         }
         
     }
-    class CreditsButtonListener implements ActionListener{
+    public class CreditsButtonListener implements ActionListener {
         
         @Override
         public void actionPerformed(ActionEvent e){
+            
             navView.switchToCreditsPanel(creditsPanel);
+            
         }
+        
+    }
+    
+    public class OptionsButtonListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+            navView.switchToOptionsPanel(optionsPanel);
+            
+        }
+               
     }
     
 }

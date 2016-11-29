@@ -18,7 +18,8 @@ public class OptionsPanel extends JPanel {
     
     public OptionsPanel() {
         
-        
+        options = new JLabel("options");
+        add(options);
         
     }
     

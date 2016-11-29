@@ -20,7 +20,7 @@ public class NavViewPanel extends JPanel {
     private HomePanel homePanel;
     private InstructionsPanel instructionsPanel;
     private CreditsPanel creditsPanel;
-    private OptionsPanel optionsPanel;
+    private OptionsView optionsView;
     
     public NavViewPanel(){
         
@@ -77,11 +77,11 @@ public class NavViewPanel extends JPanel {
         
     }
     
-    public void addOptionsPanel(OptionsPanel optionsPanel) {
+    public void addOptionsView(OptionsView optionsView) {
         
-        this.optionsPanel = optionsPanel;
+        this.optionsView = optionsView;
         
-        add(optionsPanel, BorderLayout.CENTER);
+        add(optionsView, BorderLayout.CENTER);
         
         revalidate();
         repaint();
@@ -109,10 +109,10 @@ public class NavViewPanel extends JPanel {
         
     }
     
-    public void removeOptionsPanel() {
+    public void removeOptionsView() {
         
-        if(this.optionsPanel != null)
-            remove(this.optionsPanel);
+        if(this.optionsView != null)
+            remove(this.optionsView);
         
     }
     

@@ -36,7 +36,7 @@ public class NavView extends JFrame {
         navViewPanel.removeInstructionsPanel();
         navViewPanel.removeSplash();
         navViewPanel.removeCreditsPanel();
-        navViewPanel.removeOptionsPanel();
+        navViewPanel.removeOptionsView();
         navViewPanel.addHomePanel(homePanel);
                 
     }
@@ -46,7 +46,7 @@ public class NavView extends JFrame {
         navViewPanel.removeSplash();
         navViewPanel.removeHomePanel();
         navViewPanel.removeCreditsPanel();
-        navViewPanel.removeOptionsPanel();
+        navViewPanel.removeOptionsView();
         navViewPanel.addInstructionsPanel(instructionsPanel);
         
     }
@@ -56,18 +56,18 @@ public class NavView extends JFrame {
         navViewPanel.removeSplash();
         navViewPanel.removeHomePanel();
         navViewPanel.removeInstructionsPanel();
-        navViewPanel.removeOptionsPanel();
+        navViewPanel.removeOptionsView();
         navViewPanel.addCreditsPanel(creditsPanel);
                 
     }
     
-    public void switchToOptionsPanel(OptionsPanel optionsPanel) {
+    public void switchToOptionsPanel(OptionsView optionsView) {
         
         navViewPanel.removeSplash();
         navViewPanel.removeHomePanel();
         navViewPanel.removeInstructionsPanel();
         navViewPanel.removeCreditsPanel();
-        navViewPanel.addOptionsPanel(optionsPanel);
+        navViewPanel.addOptionsView(optionsView);
                 
     }
     

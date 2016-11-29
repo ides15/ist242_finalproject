@@ -59,6 +59,17 @@ public class NavView extends JFrame {
                 
     }
     
+    public void switchToCreditsPanel(CreditsPanel c_panel){
+        navViewPanel.removeSplash();
+        navViewPanel.removeHomePanel();
+        navViewPanel.removeInstructionsPanel();
+        navViewPanel.addCreditsPanel(c_panel);
+    }
+
+    public void addCreditButtonListener(ActionListener a1){
+        
+        navViewPanel.nav.creditsButton.addActionListener(a1);
+    }
 }
 
 

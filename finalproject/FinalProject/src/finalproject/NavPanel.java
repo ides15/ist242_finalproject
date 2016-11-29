@@ -38,7 +38,7 @@ public class NavPanel extends JPanel {
         add(payrollButton);
         add(instructionsButton);
         add(optionsButton);
-        add(instructionsButton);
+        add(creditsButton);
         add(logoffButton);
         
     }

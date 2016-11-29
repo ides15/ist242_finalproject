@@ -14,7 +14,7 @@ import javax.swing.JPanel;
  */
 public class InstructionsPanel extends JPanel {
     
-    JLabel instructions;
+    private JLabel instructions;
     
     public InstructionsPanel() {
         

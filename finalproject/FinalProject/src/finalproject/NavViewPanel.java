@@ -19,6 +19,7 @@ public class NavViewPanel extends JPanel {
     
     private HomePanel homePanel;
     private InstructionsPanel i_panel;
+    private CreditsPanel c_panel;
     
     public NavViewPanel(){
         
@@ -84,4 +85,18 @@ public class NavViewPanel extends JPanel {
         
     }
     
+    public void addCreditsPanel(CreditsPanel c_panel){
+        
+        this.c_panel = c_panel;
+        add(c_panel, BorderLayout.CENTER);
+        
+        revalidate();
+        repaint();
+    }
+    
+    public void removeCreditsPanel(){
+        if(this.c_panel != null){
+            remove(this.c_panel);
+        }
+    }
 }

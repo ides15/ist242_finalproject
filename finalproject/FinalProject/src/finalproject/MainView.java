@@ -5,10 +5,12 @@
  */
 package finalproject;
 
+import javax.swing.JPanel;
+
 /**
  *
- * @author wfx5003
+ * @author John Ide | JCI5048 | PSU 2018
  */
-public class Instructions {
+public class MainView extends JPanel {
     
 }

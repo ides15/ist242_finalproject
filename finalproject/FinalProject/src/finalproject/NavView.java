@@ -5,10 +5,48 @@
  */
 package finalproject;
 
+import java.awt.event.ActionListener;
+import javax.swing.JFrame;
+
 /**
  *
  * @author jci5048
  */
-public class NavView {
+public class NavView extends JFrame {
+    
+    NavModel model;
+    NavViewPanel navViewPanel;
+    
+    public NavView(NavModel model) {
+        
+        super("Payroll System");
+        this.model = model;
+              
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(600,600);
+        
+        navViewPanel = new NavViewPanel();
+        
+        add(navViewPanel);
+        
+    }
+    
+    public void switchToMainPanel(MainView mainView) {
+        
+        navViewPanel.removeSplash();
+        navViewPanel.addMainView(mainView);
+                
+    }
+    
+    public void addInstructionsButtonListener(ActionListener al) {
+        
+        navViewPanel.nav.instructionsButton.addActionListener(al);
+        
+    }
     
 }
+
+
+
+
+

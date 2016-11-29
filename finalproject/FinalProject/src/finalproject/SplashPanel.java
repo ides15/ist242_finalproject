@@ -28,8 +28,8 @@ public class SplashPanel extends JPanel {
         add(optionsLabel);
         optionsLabel.setBounds(250, 400, 200, 50);
         
-        loginButton = new JButton("Login");
-        add(loginButton);
-        loginButton.setBounds(250, 465, 100, 30);
+//        loginButton = new JButton("Login");
+//        add(loginButton);
+//        loginButton.setBounds(250, 465, 100, 30);
     }
 }

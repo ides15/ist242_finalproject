@@ -11,10 +11,12 @@ package finalproject;
  */
 public class App {
     public static void main(String[] args) {
-        Model model = new Model();
-        View view = new View(model);
-        Controller controller = new Controller(model, view);
+        
+        NavModel model = new NavModel();
+        NavView view = new NavView(model);
+        NavController controller = new NavController(model, view);
         
         view.setVisible(true);
+        
     }
 }

@@ -14,18 +14,22 @@ import javax.swing.JPanel;
  */
 public class HomePanel extends JPanel {
     
-    private JLabel test;
-    private JLabel optionsLabel;
+    private JLabel homeLabel;
+    public JLabel optionsLabel;
+    
+    public OptionsModel optionsModel;
     
     public HomePanel() {
         
         setLayout(null);
         
-        test = new JLabel("Home");
-        add(test);
-        test.setBounds(275, 10, 100, 100);
+        homeLabel = new JLabel("Home");
+        add(homeLabel);
+        homeLabel.setBounds(275, 10, 100, 100);
         
-        optionsLabel = new JLabel("options label");
+        optionsModel = new OptionsModel();
+        
+        optionsLabel = new JLabel(optionsModel.getInfo());
         add(optionsLabel);
         optionsLabel.setBounds(150, 100, 300, 50);
         

@@ -30,7 +30,6 @@ public class OptionsView extends JPanel {
     
     OptionsModel optionsModel;
     
-    JButton returnButton;
     JButton saveButton;
     
     public OptionsView(OptionsModel optionsModel) {
@@ -56,7 +55,6 @@ public class OptionsView extends JPanel {
         pageSize.setPaintTicks(true);
         
         saveButton = new JButton("save button");
-        returnButton = new JButton("return button");
         
         add(backgroundColor);
         add(fontSizeLabel);
@@ -64,7 +62,6 @@ public class OptionsView extends JPanel {
         add(pageSizeLabel);
         add(pageSize);
         add(saveButton);
-        add(returnButton);
         add(summaryLabel);
         
     }
@@ -72,12 +69,6 @@ public class OptionsView extends JPanel {
     public void addSaveButtonListener(ActionListener al) {
         
         saveButton.addActionListener(al);
-        
-    }
-    
-    public void addReturnButtonListener(ActionListener al) {
-        
-        returnButton.addActionListener(al);
         
     }
     

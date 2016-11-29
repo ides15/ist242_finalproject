@@ -18,38 +18,33 @@ public class OptionsController {
     public OptionsModel optionsModel;
     public OptionsView optionsView;
     
+    public HomePanel homePanel;
+    
     public OptionsController(OptionsModel optionsModel, OptionsView optionsView) {
         
         this.optionsModel = optionsModel;
         this.optionsView = optionsView;
         
-        optionsView.addSaveButtonListener(new ButtonListener());
-        optionsView.addReturnButtonListener(new ButtonListener());
+        homePanel = new HomePanel();
+        
+        optionsView.addSaveButtonListener(new SaveButtonListener());
     }
     
-    public class ButtonListener implements ActionListener {
+    public class SaveButtonListener implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
             
-            JButton eventSource = (JButton)e.getSource();
-            
-            if(eventSource == optionsView.saveButton) {
-            
                 optionsModel.setInfo(optionsView.backgroundColor.getText(), 
                         optionsView.fontSize.getValue(), 
                         optionsView.pageSize.getValue());
-
-            }
-            
-            if(eventSource == optionsView.returnButton) {
                 
                 optionsView.summaryLabel.setText(optionsModel.getInfo());
                 
-            }
-            
+                homePanel.optionsLabel.setText(optionsModel.getInfo());
+
         }
-        
+            
     }
-    
+        
 }

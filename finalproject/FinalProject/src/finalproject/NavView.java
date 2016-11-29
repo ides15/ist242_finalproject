@@ -41,7 +41,7 @@ public class NavView extends JFrame {
     public void addInstructionsButtonListener(ActionListener al) {
         
         navViewPanel.nav.instructionsButton.addActionListener(al);
-        
+                
     }
     
 }

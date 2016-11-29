@@ -14,8 +14,8 @@ import javax.swing.JPanel;
  */
 public class NavViewPanel extends JPanel {
     
-    private NavPanel nav;
-    private SplashPanel splash;
+    NavPanel nav;
+    SplashPanel splash;
     
     private MainView mainView;
     
@@ -49,6 +49,7 @@ public class NavViewPanel extends JPanel {
         
         revalidate();
         repaint();
+        
     }
     
     public void removeMainView() {

@@ -1,8 +1,6 @@
 package finalproject;
 
-import java.awt.GridLayout;
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /*
@@ -15,19 +13,17 @@ import javax.swing.JPanel;
  *
  * @author nkc5101
  */
-public class NavPanel extends JPanel{
+public class NavPanel extends JPanel {
     
-    private JButton optionsButton;
-    private JButton instructionsButton;
-    private JButton creditsButton;
-    private JButton homeButton;
-    private JButton profileButton;
-    private JButton payrollButton;
-    private JButton logoffButton;
+    JButton optionsButton;
+    JButton instructionsButton;
+    JButton creditsButton;
+    JButton homeButton;
+    JButton profileButton;
+    JButton payrollButton;
+    JButton logoffButton;
     
-    NavPanel(){
-        
-        
+    NavPanel() {
         
         optionsButton = new JButton("Options");
         instructionsButton = new JButton("Instructions");
@@ -44,6 +40,7 @@ public class NavPanel extends JPanel{
         add(optionsButton);
         add(instructionsButton);
         add(logoffButton);
+        
     }
 
 }

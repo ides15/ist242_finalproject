@@ -19,12 +19,16 @@ public class HomePanel extends JPanel {
     
     public HomePanel() {
         
+        setLayout(null);
+        
         test = new JLabel("Home");
         add(test);
+        test.setBounds(275, 10, 100, 100);
         
         // if
         optionsLabel = new JLabel("No options selected.");
         add(optionsLabel);
+        optionsLabel.setBounds(200, 100, 300, 50);
         
     }
     

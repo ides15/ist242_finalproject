@@ -18,8 +18,6 @@ public class SplashPanel extends JPanel {
     
     private JButton splashPictureButton;
 //    private JButton loginButton;
-        
-    private JLabel optionsLabel;
     
     public SplashPanel() {
         

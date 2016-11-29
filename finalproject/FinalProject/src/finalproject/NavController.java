@@ -46,7 +46,7 @@ public class NavController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            
+
             navView.switchToInstructionsPanel(instructionsPanel);
             
         }        

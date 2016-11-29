@@ -27,8 +27,8 @@ public class OptionsView extends JPanel {
     public JSlider fontSize;
     public JSlider pageSize;
     
-    private JButton saveButton;
-    private JButton returnButton;
+    public JButton saveButton;
+    public JButton returnButton;
     
     OptionsModel optionsModel;
     
@@ -70,13 +70,13 @@ public class OptionsView extends JPanel {
     
     public void addSaveButtonListener(ActionListener al) {
         
-        saveButton.addActionListener(al);
+        this.saveButton.addActionListener(al);
         
     }
     
     public void addReturnButtonListener(ActionListener al) {
         
-        returnButton.addActionListener(al);
+        this.returnButton.addActionListener(al);
         
     }
     

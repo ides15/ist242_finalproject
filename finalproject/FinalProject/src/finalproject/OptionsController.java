@@ -7,7 +7,7 @@ package finalproject;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JLabel;
+import javax.swing.JButton;
 
 /**
  *
@@ -22,39 +22,40 @@ public class OptionsController {
         
         this.optionsModel = optionsModel;
         this.optionsView = optionsView;
-              
-        optionsView.addSaveButtonListener(new SaveButtonListener());
-        optionsView.addReturnButtonListener(new ReturnButtonListener());
+        
+        optionsView.addSaveButtonListener(new ButtonListener());
+        optionsView.addReturnButtonListener(new ButtonListener());
         
     }
     
-    //make the bottom two classes into one
-    
-    public class SaveButtonListener implements ActionListener {
+    public class ButtonListener implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
             
-            System.out.println("test");
+            JButton eventSource = (JButton)e.getSource();
             
-//            optionsModel.saveOptionsInfo(optionsView.backgroundColor.getText(), 
+            if(eventSource == optionsView.saveButton) {
+                
+                System.out.println("save test");
+                
+//                optionsModel.saveOptionsInfo(optionsView.backgroundColor.getText(), 
 //                    optionsView.fontSize.getValue(), 
 //                    optionsView.pageSize.getValue());
-                       
-        }
-        
-    }
-    
-    public class ReturnButtonListener implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
+            }
             
-            optionsModel.setBackgroundColor(optionsView.backgroundColor.getText());
-            optionsModel.setFontSize(optionsView.fontSize.getValue());
-            optionsModel.setPageSize(optionsView.pageSize.getValue());
+            if(eventSource == optionsView.returnButton) {
+                
+                System.out.println("return test");
+                
+//                optionsModel.setBackgroundColor(optionsView.backgroundColor.getText());
+//                optionsModel.setFontSize(optionsView.fontSize.getValue());
+//                optionsModel.setPageSize(optionsView.pageSize.getValue());
+//
+//                optionsView.setSummaryLabel(optionsModel.returnOptionsInfo());
+            }
             
-            optionsView.setSummaryLabel(optionsModel.returnOptionsInfo());
+            else System.out.println("does this print at all?");
             
         }
         

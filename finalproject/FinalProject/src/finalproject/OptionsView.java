@@ -80,4 +80,10 @@ public class OptionsView extends JPanel {
         
     }
     
+    public void setSummaryLabel(String input) {
+        
+        summaryLabel.setText(input);
+        
+    }
+    
 }

@@ -21,6 +21,7 @@ public class NavController {
     private HomePanel homePanel;
     private InstructionsPanel instructionsPanel;
     private CreditsPanel creditsPanel;
+    
     private OptionsView optionsView;
     private OptionsModel optionsModel;
     

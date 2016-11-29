@@ -7,6 +7,7 @@ package finalproject;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JLabel;
 
 /**
  *
@@ -34,10 +35,12 @@ public class OptionsController {
         @Override
         public void actionPerformed(ActionEvent e) {
             
-            optionsModel.saveOptionsInfo(optionsView.backgroundColor.getText(), 
-                    optionsView.fontSize.getValue(), 
-                    optionsView.pageSize.getValue());
-                        
+            System.out.println("test");
+            
+//            optionsModel.saveOptionsInfo(optionsView.backgroundColor.getText(), 
+//                    optionsView.fontSize.getValue(), 
+//                    optionsView.pageSize.getValue());
+                       
         }
         
     }
@@ -47,8 +50,12 @@ public class OptionsController {
         @Override
         public void actionPerformed(ActionEvent e) {
             
-            optionsView.summaryLabel.setText(optionsModel.returnOptionsInfo());
-                        
+            optionsModel.setBackgroundColor(optionsView.backgroundColor.getText());
+            optionsModel.setFontSize(optionsView.fontSize.getValue());
+            optionsModel.setPageSize(optionsView.pageSize.getValue());
+            
+            optionsView.setSummaryLabel(optionsModel.returnOptionsInfo());
+            
         }
         
     }

@@ -21,6 +21,7 @@ public class OptionsView extends JPanel {
     
     public JLabel fontSizeLabel;
     public JLabel pageSizeLabel;
+    public JLabel summaryLabel;
     
     public JTextField backgroundColor;
     
@@ -29,17 +30,20 @@ public class OptionsView extends JPanel {
     
     OptionsModel optionsModel;
     
+    JButton returnButton;
     JButton saveButton;
     
     public OptionsView(OptionsModel optionsModel) {
         
         this.optionsModel = optionsModel;
         
-        backgroundColor = new JTextField("Set the background color");
+        backgroundColor = new JTextField("Set the background color: ");
         
-        fontSizeLabel = new JLabel("Choose the font size");
+        fontSizeLabel = new JLabel("Choose the font size: ");
         
-        pageSizeLabel = new JLabel("Choose the page size");
+        pageSizeLabel = new JLabel("Choose the page size: ");
+        
+        summaryLabel = new JLabel("No options selected.");
         
         fontSize = new JSlider(JSlider.HORIZONTAL, 1, 10, 5);
         fontSize.setMajorTickSpacing(1);
@@ -52,6 +56,7 @@ public class OptionsView extends JPanel {
         pageSize.setPaintTicks(true);
         
         saveButton = new JButton("save button");
+        returnButton = new JButton("return button");
         
         add(backgroundColor);
         add(fontSizeLabel);
@@ -59,12 +64,20 @@ public class OptionsView extends JPanel {
         add(pageSizeLabel);
         add(pageSize);
         add(saveButton);
+        add(returnButton);
+        add(summaryLabel);
         
     }
     
     public void addSaveButtonListener(ActionListener al) {
         
         saveButton.addActionListener(al);
+        
+    }
+    
+    public void addReturnButtonListener(ActionListener al) {
+        
+        returnButton.addActionListener(al);
         
     }
     

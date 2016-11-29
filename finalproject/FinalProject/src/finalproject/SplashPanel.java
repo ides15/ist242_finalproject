@@ -5,7 +5,10 @@
  */
 package finalproject;
 
-import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
@@ -35,4 +38,5 @@ public class SplashPanel extends JPanel {
 //        loginButton.setBounds(250, 465, 100, 30);
 
     }
+    
 }

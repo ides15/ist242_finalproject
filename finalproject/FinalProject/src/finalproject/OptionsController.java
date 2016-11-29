@@ -5,16 +5,23 @@
  */
 package finalproject;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+
 /**
  *
  * @author John Ide | JCI5048 | PSU 2018
  */
 public class OptionsController {
     
+    public OptionsModel optionsModel;
+    public OptionsView optionsView;
+    
     public OptionsController(OptionsModel optionsModel, OptionsView optionsView) {
         
-        
-        
+        this.optionsModel = optionsModel;
+        this.optionsView = optionsView;
+                
     }
     
 }

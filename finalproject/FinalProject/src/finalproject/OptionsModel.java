@@ -11,4 +11,17 @@ package finalproject;
  */
 public class OptionsModel {
     
+    public OptionsModel() {
+        
+        
+        
+    }
+    
+    public void setFontSize(int fontSize) {
+        
+        
+        
+    }
+    
+    
 }

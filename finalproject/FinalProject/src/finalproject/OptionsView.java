@@ -5,6 +5,7 @@
  */
 package finalproject;
 
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -20,17 +21,15 @@ public class OptionsView extends JPanel {
     
     public JLabel fontSizeLabel;
     public JLabel pageSizeLabel;
-    public JLabel summaryLabel;
     
     public JTextField backgroundColor;
     
     public JSlider fontSize;
     public JSlider pageSize;
     
-    public JButton saveButton;
-    public JButton returnButton;
-    
     OptionsModel optionsModel;
+    
+    JButton saveButton;
     
     public OptionsView(OptionsModel optionsModel) {
         
@@ -52,10 +51,7 @@ public class OptionsView extends JPanel {
         pageSize.setPaintLabels(true);
         pageSize.setPaintTicks(true);
         
-        saveButton = new JButton("Save");
-        returnButton = new JButton("Return");
-        
-        summaryLabel = new JLabel("summary");
+        saveButton = new JButton("save button");
         
         add(backgroundColor);
         add(fontSizeLabel);
@@ -63,26 +59,12 @@ public class OptionsView extends JPanel {
         add(pageSizeLabel);
         add(pageSize);
         add(saveButton);
-        add(returnButton);
-        add(summaryLabel);
         
     }
     
     public void addSaveButtonListener(ActionListener al) {
         
-        this.saveButton.addActionListener(al);
-        
-    }
-    
-    public void addReturnButtonListener(ActionListener al) {
-        
-        this.returnButton.addActionListener(al);
-        
-    }
-    
-    public void setSummaryLabel(String input) {
-        
-        summaryLabel.setText(input);
+        saveButton.addActionListener(al);
         
     }
     

@@ -7,7 +7,6 @@ package finalproject;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
 
 /**
  *
@@ -23,39 +22,16 @@ public class OptionsController {
         this.optionsModel = optionsModel;
         this.optionsView = optionsView;
         
-        optionsView.addSaveButtonListener(new ButtonListener());
-        optionsView.addReturnButtonListener(new ButtonListener());
+        optionsView.addSaveButtonListener(new SaveButtonListener());
         
     }
     
-    public class ButtonListener implements ActionListener {
+    public class SaveButtonListener implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
             
-            JButton eventSource = (JButton)e.getSource();
             
-            if(eventSource == optionsView.saveButton) {
-                
-                System.out.println("save test");
-                
-//                optionsModel.saveOptionsInfo(optionsView.backgroundColor.getText(), 
-//                    optionsView.fontSize.getValue(), 
-//                    optionsView.pageSize.getValue());
-            }
-            
-            if(eventSource == optionsView.returnButton) {
-                
-                System.out.println("return test");
-                
-//                optionsModel.setBackgroundColor(optionsView.backgroundColor.getText());
-//                optionsModel.setFontSize(optionsView.fontSize.getValue());
-//                optionsModel.setPageSize(optionsView.pageSize.getValue());
-//
-//                optionsView.setSummaryLabel(optionsModel.returnOptionsInfo());
-            }
-            
-            else System.out.println("does this print at all?");
             
         }
         

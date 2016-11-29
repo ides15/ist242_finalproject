@@ -14,8 +14,6 @@ import javax.swing.JPanel;
  */
 public class HomePanel extends JPanel {
     
-    public OptionsModel optionsModel;
-    
     private JLabel test;
     private JLabel optionsLabel;
     
@@ -27,9 +25,7 @@ public class HomePanel extends JPanel {
         add(test);
         test.setBounds(275, 10, 100, 100);
         
-        optionsModel = new OptionsModel();
-        
-        optionsLabel = new JLabel(optionsModel.returnOptionsInfo());
+        optionsLabel = new JLabel("options label");
         add(optionsLabel);
         optionsLabel.setBounds(150, 100, 300, 50);
         

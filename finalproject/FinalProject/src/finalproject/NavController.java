@@ -24,6 +24,7 @@ public class NavController {
     
     private OptionsView optionsView;
     private OptionsModel optionsModel;
+    private OptionsController optionsController;
     
     public NavController(NavModel navModel, NavView navView) {
         
@@ -33,13 +34,15 @@ public class NavController {
         homePanel = new HomePanel();
         instructionsPanel = new InstructionsPanel();
         creditsPanel = new CreditsPanel();
+        
         optionsView = new OptionsView(optionsModel);
+        optionsModel = new OptionsModel();
+        optionsController = new OptionsController(optionsModel, optionsView);
         
         navView.addInstructionsButtonListener(new InstructionsButtonListener());
         navView.addHomeButtonListener(new HomeButtonListener());
         navView.addCreditsButtonListener(new CreditsButtonListener());
         navView.addOptionsButtonListener(new OptionsButtonListener());
-        
     }
     
     public class InstructionsButtonListener implements ActionListener {

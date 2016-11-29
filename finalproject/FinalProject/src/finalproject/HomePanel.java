@@ -25,8 +25,7 @@ public class HomePanel extends JPanel {
         add(test);
         test.setBounds(275, 10, 100, 100);
         
-        // if
-        optionsLabel = new JLabel("No options selected.");
+        optionsLabel = new JLabel("Font size: " + );
         add(optionsLabel);
         optionsLabel.setBounds(230, 100, 200, 50);
         

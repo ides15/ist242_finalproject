@@ -18,7 +18,7 @@ public class CreditsPanel extends JPanel {
     
     public CreditsPanel() {
         
-        creditsLabel = new JLabel("<html>Developers:<br>John Ide - jci5048@psu.edu"
+        creditsLabel = new JLabel("<html>Developers:<br>John Ide - ide.johnc@gmail.com"
                 + "<br>Nate Cox - nkc5010@psu.edu"
                 + "<br>Weijun Xu - wfx5003@psu.edu</html>");
         

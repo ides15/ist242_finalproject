@@ -16,21 +16,29 @@ import javax.swing.JSlider;
 public class OptionsPanel extends JPanel {
     
     private JLabel options;
-    private JTextField backgroundcolor;
-    private JSlider fontsize;
+    private JTextField backgroundColor;
+    private JSlider fontSize;
+    
     public OptionsPanel() {
         
+        backgroundColor = new JTextField("Set the background color");
         
-       backgroundcolor = new JTextField("--Set the Background Color--");
-       options = new JLabel("Choose the font size");
-       fontsize = new JSlider(JSlider.HORIZONTAL, 1,10,5);
-       fontsize.setMajorTickSpacing(1);
-       fontsize.setPaintLabels(true);
-       fontsize.setPaintTicks(true);
+        options = new JLabel("Choose the font size");
         
-        add(backgroundcolor);
+        fontSize = new JSlider(JSlider.HORIZONTAL, 1, 10, 5);
+        fontSize.setMajorTickSpacing(1);
+        fontSize.setPaintLabels(true);
+        fontSize.setPaintTicks(true);        
+        
+        add(backgroundColor);
         add(options);
-        add(fontsize);
+        add(fontSize);
+                
+    }
+    
+    public int getFontSize() {
+        
+        return fontSize.getValue();
         
     }
     

@@ -5,6 +5,7 @@
  */
 package finalproject;
 
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -49,6 +50,18 @@ public class OptionsView extends JPanel {
         add(fontSize);
         add(saveButton);
         add(returnButton);
+        
+    }
+    
+    public void addSaveButtonListener(ActionListener al) {
+        
+        saveButton.addActionListener(al);
+        
+    }
+    
+    public void addReturnButtonListener(ActionListener al) {
+        
+        returnButton.addActionListener(al);
         
     }
     

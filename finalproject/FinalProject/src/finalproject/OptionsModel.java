@@ -11,17 +11,32 @@ package finalproject;
  */
 public class OptionsModel {
     
+    String backgroundColor;
+    
+    int fontSize;
+    int pageSize;
+    
     public OptionsModel() {
         
-        
-        
-    }
-    
-    public void setFontSize(int fontSize) {
-        
-        
+        this.backgroundColor = "white";
+        this.fontSize = 5;
+        this.pageSize = 5;
         
     }
     
+    public void saveReturnInfo(String backgroundColor, int fontSize, int pageSize) {
+        
+        this.backgroundColor = backgroundColor;
+        this.fontSize = fontSize;
+        this.pageSize = pageSize;
+        
+    }
     
+    public String returnOptionsInfo() {
+        
+        return "Background color: " + this.backgroundColor + ", font size: "
+                + this.fontSize + ", page size: " + this.pageSize;
+        
+    }
+
 }

@@ -5,8 +5,8 @@
  */
 package finalproject;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -22,6 +22,28 @@ public class OptionsController {
         this.optionsModel = optionsModel;
         this.optionsView = optionsView;
                 
+    }
+    
+    public class SaveButtonListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+            
+            
+        }
+        
+    }
+    
+    public class ReturnButtonListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+            optionsView
+            
+        }
+        
     }
     
 }

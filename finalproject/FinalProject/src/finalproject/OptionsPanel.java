@@ -7,6 +7,7 @@ package finalproject;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JSlider;
 
 /**
  *
@@ -16,10 +17,18 @@ public class OptionsPanel extends JPanel {
     
     private JLabel options;
     
+    private JSlider textSizeSlider;
+    
     public OptionsPanel() {
         
         options = new JLabel("options");
         add(options);
+        
+        textSizeSlider = new JSlider(JSlider.HORIZONTAL, 1, 10, 5);
+        textSizeSlider.setMajorTickSpacing(1);
+        textSizeSlider.setPaintLabels(true);
+        textSizeSlider.setPaintTicks(true);
+        add(textSizeSlider);
         
     }
     

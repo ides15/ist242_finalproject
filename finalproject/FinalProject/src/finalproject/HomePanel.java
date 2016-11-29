@@ -15,11 +15,16 @@ import javax.swing.JPanel;
 public class HomePanel extends JPanel {
     
     private JLabel test;
+    private JLabel optionsLabel;
     
     public HomePanel() {
         
         test = new JLabel("Home");
         add(test);
+        
+        // if
+        optionsLabel = new JLabel("No options selected.");
+        add(optionsLabel);
         
     }
     

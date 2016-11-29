@@ -29,7 +29,8 @@ public class OptionsController {
         @Override
         public void actionPerformed(ActionEvent e) {
             
-            
+            optionsModel.saveOptionsInfo(optionsModel.getBackgroundColor(),
+                    optionsModel.getFontSize(), optionsModel.getPageSize());
             
         }
         
@@ -40,7 +41,7 @@ public class OptionsController {
         @Override
         public void actionPerformed(ActionEvent e) {
             
-            optionsView
+            
             
         }
         

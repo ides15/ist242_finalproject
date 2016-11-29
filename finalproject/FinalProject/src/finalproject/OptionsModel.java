@@ -11,10 +11,10 @@ package finalproject;
  */
 public class OptionsModel {
     
-    String backgroundColor;
+    private String backgroundColor;
     
-    int fontSize;
-    int pageSize;
+    private int fontSize;
+    private int pageSize;
     
     public OptionsModel() {
         
@@ -24,19 +24,45 @@ public class OptionsModel {
         
     }
     
-    public void saveReturnInfo(String backgroundColor, int fontSize, int pageSize) {
+    public void saveOptionsInfo(String backgroundColor, int fontSize, int pageSize) {
         
-        this.backgroundColor = backgroundColor;
-        this.fontSize = fontSize;
-        this.pageSize = pageSize;
+        this.setBackgroundColor(backgroundColor);
+        this.setFontSize(fontSize);
+        this.setPageSize(pageSize);
         
     }
     
     public String returnOptionsInfo() {
         
-        return "Background color: " + this.backgroundColor + ", font size: "
-                + this.fontSize + ", page size: " + this.pageSize;
+        return "Background color: " + this.getBackgroundColor() + ", font size: "
+                + this.getFontSize() + ", page size: " + this.getPageSize();
         
     }
+
+    public String getBackgroundColor() {
+        return backgroundColor;
+    }
+
+    public void setBackgroundColor(String backgroundColor) {
+        this.backgroundColor = backgroundColor;
+    }
+
+    public int getFontSize() {
+        return fontSize;
+    }
+
+    public void setFontSize(int fontSize) {
+        this.fontSize = fontSize;
+    }
+
+    public int getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
+    }
+    
+    
 
 }

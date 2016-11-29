@@ -95,7 +95,6 @@ public class NavViewPanel extends JPanel {
         if(this.creditsPanel != null)
             remove(this.creditsPanel);
         
-        
     }
     
     public void removeSplash() {

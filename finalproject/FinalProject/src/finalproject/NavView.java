@@ -31,17 +31,18 @@ public class NavView extends JFrame {
         
     }
     
-    public void switchToMainPanel(MainView mainView) {
+    public void switchToHomePanel(HomePanel homePanel) {
         
+        navViewPanel.removeInstructionsPanel();
         navViewPanel.removeSplash();
-        navViewPanel.addMainView(mainView);
+        navViewPanel.addHomePanel(homePanel);
                 
     }
     
     public void switchToInstructionsPanel(InstructionsPanel i_panel) {
         
         navViewPanel.removeSplash();
-        navViewPanel.removeMainView();
+        navViewPanel.removeHomePanel();
         navViewPanel.addInstructionsPanel(i_panel);
         
     }
@@ -49,6 +50,12 @@ public class NavView extends JFrame {
     public void addInstructionsButtonListener(ActionListener al) {
         
         navViewPanel.nav.instructionsButton.addActionListener(al);
+                
+    }
+    
+    public void addHomeButtonListener(ActionListener al) {
+        
+        navViewPanel.nav.homeButton.addActionListener(al);
                 
     }
     

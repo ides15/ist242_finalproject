@@ -21,6 +21,8 @@ public class Person {
     
     private Person() {
         
+        fName = "User";
+        
     }
 
     public String getfName() {

@@ -12,13 +12,13 @@ import javax.swing.JPanel;
  *
  * @author John Ide | JCI5048 | PSU 2018
  */
-public class MainView extends JPanel {
+public class HomePanel extends JPanel {
     
     JLabel test;
     
-    public MainView() {
+    public HomePanel() {
         
-        test = new JLabel("Main View");
+        test = new JLabel("Home");
         add(test);
         
     }

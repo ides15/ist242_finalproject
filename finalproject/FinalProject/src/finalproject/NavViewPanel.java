@@ -17,7 +17,7 @@ public class NavViewPanel extends JPanel {
     NavPanel nav;
     SplashPanel splash;
     
-    private MainView mainView;
+    private HomePanel homePanel;
     private InstructionsPanel i_panel;
     
     public NavViewPanel(){
@@ -42,11 +42,11 @@ public class NavViewPanel extends JPanel {
         
     }
     
-    public void addMainView(MainView mainView) {
+    public void addHomePanel(HomePanel homePanel) {
         
-        this.mainView = mainView;
+        this.homePanel = homePanel;
         
-        add(mainView, BorderLayout.CENTER);
+        add(homePanel, BorderLayout.CENTER);
         
         revalidate();
         repaint();
@@ -64,10 +64,17 @@ public class NavViewPanel extends JPanel {
         
     }
     
-    public void removeMainView() {
+    public void removeHomePanel() {
         
-        if(this.mainView != null)
-            remove(this.mainView);
+        if(this.homePanel != null)
+            remove(this.homePanel);
+        
+    }
+    
+    public void removeInstructionsPanel() {
+        
+        if(this.i_panel != null)
+            remove(this.i_panel);
         
     }
     

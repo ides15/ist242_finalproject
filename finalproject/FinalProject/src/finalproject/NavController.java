@@ -18,7 +18,7 @@ public class NavController {
     NavModel navModel;
     NavView navView;
         
-    MainView mainView;
+    HomePanel homePanel;
     InstructionsPanel i_panel;
     
     public NavController(NavModel navModel, NavView navView) {
@@ -26,11 +26,12 @@ public class NavController {
         this.navModel = navModel;
         this.navView = navView;
         
-        mainView = new MainView();
+        homePanel = new HomePanel();
         i_panel = new InstructionsPanel();
         
         navView.addInstructionsButtonListener(new InstructionsButtonListener());
-    
+        navView.addHomeButtonListener(new HomeButtonListener());
+        
     }
     
     class InstructionsButtonListener implements ActionListener {
@@ -42,6 +43,17 @@ public class NavController {
             
         }        
     
+    }
+    
+    class HomeButtonListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+            navView.switchToHomePanel(homePanel);
+            
+        }
+        
     }
     
 }

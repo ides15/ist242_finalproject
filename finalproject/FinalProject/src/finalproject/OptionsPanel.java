@@ -7,8 +7,8 @@ package finalproject;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.JSlider;
-
 /**
  *
  * @author John Ide | JCI5048 | PSU 2018
@@ -16,19 +16,21 @@ import javax.swing.JSlider;
 public class OptionsPanel extends JPanel {
     
     private JLabel options;
-    
-    private JSlider textSizeSlider;
-    
+    private JTextField backgroundcolor;
+    private JSlider fontsize;
     public OptionsPanel() {
         
-        options = new JLabel("options");
-        add(options);
         
-        textSizeSlider = new JSlider(JSlider.HORIZONTAL, 1, 10, 5);
-        textSizeSlider.setMajorTickSpacing(1);
-        textSizeSlider.setPaintLabels(true);
-        textSizeSlider.setPaintTicks(true);
-        add(textSizeSlider);
+       backgroundcolor = new JTextField("--Set the Background Color--");
+       options = new JLabel("Choose the font size");
+       fontsize = new JSlider(JSlider.HORIZONTAL, 1,10,5);
+       fontsize.setMajorTickSpacing(1);
+       fontsize.setPaintLabels(true);
+       fontsize.setPaintTicks(true);
+        
+        add(backgroundcolor);
+        add(options);
+        add(fontsize);
         
     }
     

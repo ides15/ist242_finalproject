@@ -12,14 +12,13 @@ import javax.swing.JPanel;
  *
  * @author John Ide | JCI5048 | PSU 2018
  */
-public class HomePanel extends JPanel {
+public class OptionsPanel extends JPanel {
     
-    private JLabel test;
+    private JLabel options;
     
-    public HomePanel() {
+    public OptionsPanel() {
         
-        test = new JLabel("Home");
-        add(test);
+        
         
     }
     

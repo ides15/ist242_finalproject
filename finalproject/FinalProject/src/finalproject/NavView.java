@@ -14,8 +14,8 @@ import javax.swing.JFrame;
  */
 public class NavView extends JFrame {
     
-    NavModel model;
-    NavViewPanel navViewPanel;
+    public NavModel model;
+    public NavViewPanel navViewPanel;
     
     public NavView(NavModel model) {
         
@@ -35,16 +35,27 @@ public class NavView extends JFrame {
         
         navViewPanel.removeInstructionsPanel();
         navViewPanel.removeSplash();
+        navViewPanel.removeCreditsPanel();
         navViewPanel.addHomePanel(homePanel);
                 
     }
     
-    public void switchToInstructionsPanel(InstructionsPanel i_panel) {
+    public void switchToInstructionsPanel(InstructionsPanel instructionsPanel) {
         
         navViewPanel.removeSplash();
         navViewPanel.removeHomePanel();
-        navViewPanel.addInstructionsPanel(i_panel);
+        navViewPanel.removeCreditsPanel();
+        navViewPanel.addInstructionsPanel(instructionsPanel);
         
+    }
+    
+    public void switchToCreditsPanel(CreditsPanel creditsPanel) {
+        
+        navViewPanel.removeSplash();
+        navViewPanel.removeHomePanel();
+        navViewPanel.removeInstructionsPanel();
+        navViewPanel.addCreditsPanel(creditsPanel);
+                
     }
     
     public void addInstructionsButtonListener(ActionListener al) {
@@ -58,21 +69,11 @@ public class NavView extends JFrame {
         navViewPanel.nav.homeButton.addActionListener(al);
                 
     }
-    
-    public void switchToCreditsPanel(CreditsPanel c_panel){
-        navViewPanel.removeSplash();
-        navViewPanel.removeHomePanel();
-        navViewPanel.removeInstructionsPanel();
-        navViewPanel.addCreditsPanel(c_panel);
-    }
 
-    public void addCreditButtonListener(ActionListener a1){
+    public void addCreditsButtonListener(ActionListener al) {
         
-        navViewPanel.nav.creditsButton.addActionListener(a1);
+        navViewPanel.nav.creditsButton.addActionListener(al);
+                
     }
+    
 }
-
-
-
-
-

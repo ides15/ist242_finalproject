@@ -12,12 +12,14 @@ import javax.swing.*;
  * @author John Ide | JCI5048 | PSU 2018
  */
 public class SplashPanel extends JPanel {
-    JButton splashPictureButton;
-    JButton loginButton;
-        
-    JLabel optionsLabel;
     
-    SplashPanel() {
+    private JButton splashPictureButton;
+//    private JButton loginButton;
+        
+    private JLabel optionsLabel;
+    
+    public SplashPanel() {
+        
         setLayout(null);
         
         splashPictureButton = new JButton(new ImageIcon("src/images/dollareyes.png"));
@@ -31,5 +33,6 @@ public class SplashPanel extends JPanel {
 //        loginButton = new JButton("Login");
 //        add(loginButton);
 //        loginButton.setBounds(250, 465, 100, 30);
+
     }
 }

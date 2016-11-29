@@ -17,10 +17,10 @@ public class NavController {
     
     NavModel navModel;
     NavView navView;
-        
-    HomePanel homePanel;
-    InstructionsPanel i_panel;
-    CreditsPanel c_panel;
+    
+    private HomePanel homePanel;
+    private InstructionsPanel instructionsPanel;
+    private CreditsPanel creditsPanel;
     
     public NavController(NavModel navModel, NavView navView) {
         
@@ -28,27 +28,27 @@ public class NavController {
         this.navView = navView;
         
         homePanel = new HomePanel();
-        i_panel = new InstructionsPanel();
-        c_panel = new CreditsPanel();
+        instructionsPanel = new InstructionsPanel();
+        creditsPanel = new CreditsPanel();
         
         navView.addInstructionsButtonListener(new InstructionsButtonListener());
         navView.addHomeButtonListener(new HomeButtonListener());
-        navView.addCreditButtonListener(new CreditsButtonListener());
+        navView.addCreditsButtonListener(new CreditsButtonListener());
         
     }
     
-    class InstructionsButtonListener implements ActionListener {
+    public class InstructionsButtonListener implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
             
-            navView.switchToInstructionsPanel(i_panel);
+            navView.switchToInstructionsPanel(instructionsPanel);
             
         }        
     
     }
     
-    class HomeButtonListener implements ActionListener {
+    public class HomeButtonListener implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -62,7 +62,7 @@ public class NavController {
         
         @Override
         public void actionPerformed(ActionEvent e){
-            navView.switchToCreditsPanel(c_panel);
+            navView.switchToCreditsPanel(creditsPanel);
         }
     }
     

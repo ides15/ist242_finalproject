@@ -14,12 +14,12 @@ import javax.swing.JPanel;
  */
 public class NavViewPanel extends JPanel {
     
-    NavPanel nav;
-    SplashPanel splash;
+    public NavPanel nav;
+    private SplashPanel splash;
     
     private HomePanel homePanel;
-    private InstructionsPanel i_panel;
-    private CreditsPanel c_panel;
+    private InstructionsPanel instructionsPanel;
+    private CreditsPanel creditsPanel;
     
     public NavViewPanel(){
         
@@ -54,11 +54,22 @@ public class NavViewPanel extends JPanel {
         
     }
     
-    public void addInstructionsPanel(InstructionsPanel i_panel) {
+    public void addInstructionsPanel(InstructionsPanel instructionsPanel) {
         
-        this.i_panel = i_panel;
+        this.instructionsPanel = instructionsPanel;
         
-        add(i_panel, BorderLayout.CENTER);
+        add(instructionsPanel, BorderLayout.CENTER);
+        
+        revalidate();
+        repaint();
+        
+    }
+    
+    public void addCreditsPanel(CreditsPanel creditsPanel) {
+        
+        this.creditsPanel = creditsPanel;
+        
+        add(creditsPanel, BorderLayout.CENTER);
         
         revalidate();
         repaint();
@@ -74,8 +85,16 @@ public class NavViewPanel extends JPanel {
     
     public void removeInstructionsPanel() {
         
-        if(this.i_panel != null)
-            remove(this.i_panel);
+        if(this.instructionsPanel != null)
+            remove(this.instructionsPanel);
+        
+    }
+    
+    public void removeCreditsPanel() {
+        
+        if(this.creditsPanel != null)
+            remove(this.creditsPanel);
+        
         
     }
     
@@ -85,18 +104,4 @@ public class NavViewPanel extends JPanel {
         
     }
     
-    public void addCreditsPanel(CreditsPanel c_panel){
-        
-        this.c_panel = c_panel;
-        add(c_panel, BorderLayout.CENTER);
-        
-        revalidate();
-        repaint();
-    }
-    
-    public void removeCreditsPanel(){
-        if(this.c_panel != null){
-            remove(this.c_panel);
-        }
-    }
 }

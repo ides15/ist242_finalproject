@@ -1,29 +1,28 @@
-package finalproject;
-
-
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package finalproject;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
- * @author Nate Cox
+ * @author John Ide | JCI5048 | PSU 2018
  */
-public class CreditsPanel extends JPanel{
-
-    private JLabel credits;
+public class CreditsPanel extends JPanel {
+    
+    private JLabel creditsLabel;
     
     public CreditsPanel() {
-        credits = new JLabel("This program was designed by John Ide, Nate Cox "
-        + " and Weijun Xu");
-        add(credits);
+        
+        creditsLabel = new JLabel("<html>Developers:<br>John Ide - jci5048@psu.edu"
+                + "<br>Nate Cox - nkc5010@psu.edu"
+                + "<br>Weijun Xu - wfx5003@psu.edu</html>");
+        
+        add(creditsLabel);
+        
     }
-    
-    
-    
 }

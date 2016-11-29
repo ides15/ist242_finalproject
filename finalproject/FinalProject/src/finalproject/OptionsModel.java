@@ -33,7 +33,9 @@ public class OptionsModel {
     
     public String getInfo() {
         
-        return "test";
+        return "Background color: " + getBackgroundColor() 
+                + ", font size: " + getFontSize() 
+                + ", page size: " + getPageSize();
         
     }
 

@@ -36,13 +36,15 @@ public class OptionsController {
             
             if(eventSource == optionsView.saveButton) {
             
-                System.out.println("save button");
+                optionsModel.setInfo(optionsView.backgroundColor.getText(), 
+                        optionsView.fontSize.getValue(), 
+                        optionsView.pageSize.getValue());
 
             }
             
             if(eventSource == optionsView.returnButton) {
                 
-                System.out.println("return button");
+                optionsView.summaryLabel.setText(optionsModel.getInfo());
                 
             }
             

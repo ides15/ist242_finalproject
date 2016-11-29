@@ -19,6 +19,7 @@ public class NavController {
     NavView navView;
         
     MainView mainView;
+    InstructionsPanel i_panel;
     
     public NavController(NavModel navModel, NavView navView) {
         
@@ -26,6 +27,7 @@ public class NavController {
         this.navView = navView;
         
         mainView = new MainView();
+        i_panel = new InstructionsPanel();
         
         navView.addInstructionsButtonListener(new InstructionsButtonListener());
     
@@ -36,11 +38,9 @@ public class NavController {
         @Override
         public void actionPerformed(ActionEvent e) {
             
-            navView.switchToMainPanel(mainView);
+            navView.switchToInstructionsPanel(i_panel);
             
-        }
-    
-        
+        }        
     
     }
     

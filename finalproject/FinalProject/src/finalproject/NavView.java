@@ -38,6 +38,13 @@ public class NavView extends JFrame {
                 
     }
     
+    public void switchToInstructionsPanel(InstructionsPanel i_panel) {
+        
+        navViewPanel.removeMainView();
+        navViewPanel.addInstructionsPanel(i_panel);
+        
+    }
+    
     public void addInstructionsButtonListener(ActionListener al) {
         
         navViewPanel.nav.instructionsButton.addActionListener(al);

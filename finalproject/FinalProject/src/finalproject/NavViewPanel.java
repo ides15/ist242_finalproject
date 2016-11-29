@@ -18,6 +18,7 @@ public class NavViewPanel extends JPanel {
     SplashPanel splash;
     
     private MainView mainView;
+    private InstructionsPanel i_panel;
     
     public NavViewPanel(){
         
@@ -32,9 +33,9 @@ public class NavViewPanel extends JPanel {
         
     }
     
-    public void addSplash(NavView view) {
+    public void addSplash(NavView navView) {
         
-        add(view, BorderLayout.CENTER);
+        add(navView, BorderLayout.CENTER);
         
         revalidate();
         repaint();
@@ -46,6 +47,17 @@ public class NavViewPanel extends JPanel {
         this.mainView = mainView;
         
         add(mainView, BorderLayout.CENTER);
+        
+        revalidate();
+        repaint();
+        
+    }
+    
+    public void addInstructionsPanel(InstructionsPanel i_panel) {
+        
+        this.i_panel = i_panel;
+        
+        add(i_panel, BorderLayout.CENTER);
         
         revalidate();
         repaint();

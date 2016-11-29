@@ -12,14 +12,16 @@ import javax.swing.JPanel;
  *
  * @author John Ide | JCI5048 | PSU 2018
  */
-public class MainView extends JPanel {
+public class InstructionsPanel extends JPanel {
     
-    JLabel test;
+    JLabel instructions;
     
-    public MainView() {
+    public InstructionsPanel() {
         
-        test = new JLabel("Main View");
-        add(test);
+        instructions = new JLabel("These are instructions for this payroll "
+                + "system.");
+        
+        add(instructions);
         
     }
     

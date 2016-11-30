@@ -18,11 +18,44 @@ public class Person {
     private String username;
     private String password;
     private String company;
+    private double paycheck;
+    private double YTDPay;
+    private double taxesPercent;
+    private double taxesTaken;
+    private double salary;
+    private double hours;
     
     private Person() {
         
         fName = "User";
         
+    }
+    
+    public double getPaycheck() {
+        paycheck = (salary * hours) * taxesPercent;
+        return paycheck;        
+    }
+    
+    public double getYTDPay() {
+        YTDPay = getPaycheck() * 26;
+        return YTDPay;
+    }
+    
+    public double getTaxesTaken() {
+        taxesTaken = getPaycheck() - (salary * hours);
+        return taxesTaken;
+    }
+    
+    public double getTaxesPercent() {
+        return taxesPercent;
+    }
+    
+    public double getSalary() {
+        return salary;
+    }
+    
+    public double getHours() {
+        return hours;
     }
 
     public String getfName() {

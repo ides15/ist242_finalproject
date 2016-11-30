@@ -14,7 +14,8 @@ import javax.swing.JTextField;
  *
  * @author nkc5101
  */
-public class PayrollPanel extends JPanel{
+public class PayrollPanel extends JPanel {
+    
     private JLabel company;
     private JLabel currentPeriod;
     private JLabel YTDPay;
@@ -23,6 +24,7 @@ public class PayrollPanel extends JPanel{
     private JLabel hoursWorked;
 
     public PayrollPanel(Person person) {
+        
         company = new JLabel();
         company.setText("Company :" + person.getCompany());
         currentPeriod = new JLabel("Current Paycheck:" + person.getPaycheck());

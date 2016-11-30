@@ -10,8 +10,7 @@ package finalproject;
  * @author John Ide | JCI5048 | PSU 2018
  */
 public class Person {
-    private String fName;
-    private String lName;
+    private String name;
     private int age;
     private String address;
     private String email;
@@ -27,8 +26,7 @@ public class Person {
     
     private Person() {
         
-        fName = "John";
-        lName = "Ide";
+        name = "John Ide";
         age = 20;
         address = "8514 Oakford Dr.";
         email = "ide.johnc@gmail.com";
@@ -68,20 +66,12 @@ public class Person {
         return hours;
     }
 
-    public String getfName() {
-        return fName;
+    public String getName() {
+        return name;
     }
 
-    public void setfName(String fName) {
-        this.fName = fName;
-    }
-
-    public String getlName() {
-        return lName;
-    }
-
-    public void setlName(String lName) {
-        this.lName = lName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getAge() {

@@ -12,20 +12,12 @@ package finalproject;
 public class Model {
     private Person user;
     
-    private String getFName() {
-        return user.getfName();
+    private String getName() {
+        return user.getName();
     }
     
-    private void setFName(String fName) {
-        user.setfName(fName);
-    }
-    
-    private String getLName() {
-        return user.getlName();
-    }
-    
-    private void setLName(String lName) {
-        user.setlName(lName);
+    private void setName(String name) {
+        user.setName(name);
     }
     
     private int getAge() {

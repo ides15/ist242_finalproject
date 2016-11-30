@@ -11,7 +11,7 @@ package finalproject;
  */
 public class Person {
     private String name;
-    private int age;
+    private String age;
     private String address;
     private String email;
     private String username;
@@ -27,7 +27,7 @@ public class Person {
     private Person() {
         
         name = "John Ide";
-        age = 20;
+        age = "20";
         address = "8514 Oakford Dr.";
         email = "ide.johnc@gmail.com";
         username = "ide.johnc";
@@ -74,11 +74,11 @@ public class Person {
         this.name = name;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 

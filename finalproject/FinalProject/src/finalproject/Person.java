@@ -27,7 +27,17 @@ public class Person {
     
     private Person() {
         
-        fName = "User";
+        fName = "John";
+        lName = "Ide";
+        age = 20;
+        address = "8514 Oakford Dr.";
+        email = "ide.johnc@gmail.com";
+        username = "ide.johnc";
+        password = "password";
+        company = "PSU";
+        taxesPercent = 0.95;
+        salary = 10.00;
+        hours = 10.00;
         
     }
     

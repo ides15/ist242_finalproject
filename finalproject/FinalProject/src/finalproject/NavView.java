@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author jci5048
+ * @author John Ide | JCI5048 | PSU 2018
  */
 public class NavView extends JFrame {
     
@@ -21,7 +21,7 @@ public class NavView extends JFrame {
         
         super("Payroll System");
         this.model = model;
-              
+        
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600,600);
         

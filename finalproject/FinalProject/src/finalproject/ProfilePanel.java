@@ -1,6 +1,8 @@
 package finalproject;
 
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -16,7 +18,7 @@ import javax.swing.JTextField;
  *
  * @author nkc5101
  */
-public class ProfilePanel extends JPanel{
+public class ProfilePanel extends JPanel implements ActionListener{
     private JLabel user;
     private JLabel password;
     private JLabel email;
@@ -32,11 +34,15 @@ public class ProfilePanel extends JPanel{
     private JTextField addressField;
     
     private JButton saveButton;
+    
+    private Person person;
 
     public ProfilePanel(Person person) {
         
         GridLayout grid = new GridLayout(7,2);
         setLayout(grid);
+        
+        this.person = person;
         
         user = new JLabel("User: ");
         password = new JLabel("Password: ");
@@ -48,11 +54,13 @@ public class ProfilePanel extends JPanel{
         userField = new JTextField(person.getUsername());
         passField = new JTextField(person.getPassword());
         emailField = new JTextField(person.getEmail());
-        nameField = new JTextField(person.getfName() + " " + person.getlName());
+        nameField = new JTextField(person.getName());
         ageField = new JTextField(person.getAge());
         addressField = new JTextField(person.getAddress());
         
         saveButton = new JButton("Save");
+        saveButton.addActionListener(this);
+        
         
         add(user);
         add(userField);
@@ -68,6 +76,17 @@ public class ProfilePanel extends JPanel{
         add(addressField);
         add(saveButton);
         
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        person.setUsername(userField.getText());
+        person.setPassword(passField.getText());
+        person.setEmail(emailField.getText());
+        person.setName(nameField.getText());
+        person.setAge(ageField.getText());
+        person.setAddress(addressField.getText());
+                
     }
     
     

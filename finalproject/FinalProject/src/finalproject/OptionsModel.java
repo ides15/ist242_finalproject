@@ -26,9 +26,10 @@ public class OptionsModel {
     
     public void setInfo(String backgroundColor, int fontSize, int pageSize) {
         
-        this.backgroundColor = backgroundColor;
-        this.fontSize = fontSize;
-        this.pageSize = pageSize;
+        setBackgroundColor(backgroundColor);
+        setFontSize(fontSize);
+        setPageSize(pageSize);
+        
     }
     
     public String getInfo() {

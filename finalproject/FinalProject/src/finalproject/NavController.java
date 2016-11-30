@@ -18,13 +18,13 @@ public class NavController {
     NavModel navModel;
     NavView navView;
     
-    private HomePanel homePanel;
+    public HomePanel homePanel;
     private InstructionsPanel instructionsPanel;
     private CreditsPanel creditsPanel;
     
-    private OptionsView optionsView;
-    private OptionsModel optionsModel;
-    private OptionsController optionsController;
+    public OptionsView optionsView;
+    public OptionsModel optionsModel;
+    public OptionsController optionsController;
     
     public NavController(NavModel navModel, NavView navView) {
         

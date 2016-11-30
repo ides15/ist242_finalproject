@@ -25,6 +25,7 @@ public class OptionsController {
         this.optionsView = optionsView;
         
         homePanel = new HomePanel();
+        optionsModel = new OptionsModel();
         
         optionsView.addSaveButtonListener(new SaveButtonListener());
     }
@@ -34,13 +35,15 @@ public class OptionsController {
         @Override
         public void actionPerformed(ActionEvent e) {
             
-                optionsModel.setInfo(optionsView.backgroundColor.getText(), 
+            System.out.println("Before: " + optionsModel.getInfo());
+            
+            optionsModel.setInfo(optionsView.backgroundColor.getText(), 
                         optionsView.fontSize.getValue(), 
                         optionsView.pageSize.getValue());
                 
-                optionsView.summaryLabel.setText(optionsModel.getInfo());
+            optionsView.summaryLabel.setText(optionsModel.getInfo());
                 
-                homePanel.optionsLabel.setText(optionsModel.getInfo());
+            System.out.println("After: " + optionsModel.getInfo());
 
         }
             

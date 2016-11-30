@@ -17,10 +17,10 @@ public class NavViewPanel extends JPanel {
     public NavPanel nav;
     private SplashPanel splash;
     
-    private HomePanel homePanel;
+    public HomePanel homePanel;
     private InstructionsPanel instructionsPanel;
     private CreditsPanel creditsPanel;
-    private OptionsView optionsView;
+    public OptionsView optionsView;
     
     public NavViewPanel(){
         
@@ -32,6 +32,8 @@ public class NavViewPanel extends JPanel {
         
         add(nav, BorderLayout.SOUTH);
         add(splash, BorderLayout.CENTER);
+        
+        homePanel = new HomePanel();
         
     }
     

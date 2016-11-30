@@ -17,15 +17,10 @@ public class OptionsController {
     public OptionsModel optionsModel;
     public OptionsView optionsView;
     
-    public HomePanel homePanel;
-    
     public OptionsController(OptionsModel optionsModel, OptionsView optionsView) {
         
         this.optionsModel = optionsModel;
         this.optionsView = optionsView;
-        
-        homePanel = new HomePanel();
-        optionsModel = new OptionsModel();
         
         optionsView.addSaveButtonListener(new SaveButtonListener());
     }
@@ -42,7 +37,7 @@ public class OptionsController {
                         optionsView.pageSize.getValue());
                 
             optionsView.summaryLabel.setText(optionsModel.getInfo());
-                
+                            
             System.out.println("After: " + optionsModel.getInfo());
 
         }

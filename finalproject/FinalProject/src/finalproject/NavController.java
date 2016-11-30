@@ -62,7 +62,8 @@ public class NavController {
         public void actionPerformed(ActionEvent e) {
             
             navView.switchToHomePanel(homePanel);
-            
+            homePanel.optionsLabel.setText(optionsModel.getInfo());
+                        
         }
         
     }

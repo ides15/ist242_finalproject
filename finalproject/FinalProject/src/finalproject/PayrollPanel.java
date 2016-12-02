@@ -2,7 +2,6 @@ package finalproject;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -41,8 +40,5 @@ public class PayrollPanel extends JPanel {
         add(hoursWorked);
         
     }
-   
-    
-    
     
 }

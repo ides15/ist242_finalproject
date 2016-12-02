@@ -30,15 +30,11 @@ public class OptionsController {
         @Override
         public void actionPerformed(ActionEvent e) {
             
-            System.out.println("Before: " + optionsModel.getInfo());
-            
             optionsModel.setInfo(optionsView.backgroundColor.getText(), 
                         optionsView.fontSize.getValue(), 
                         optionsView.pageSize.getValue());
                 
             optionsView.summaryLabel.setText(optionsModel.getInfo());
-                            
-            System.out.println("After: " + optionsModel.getInfo());
 
         }
             

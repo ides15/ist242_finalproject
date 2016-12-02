@@ -37,10 +37,6 @@ public class NavView extends JFrame {
         navViewPanel.removeSplash();
         navViewPanel.removeCreditsPanel();
         navViewPanel.removeOptionsView();
-        
-//        navViewPanel.homePanel.optionsLabel.setText(
-//                navViewPanel.optionsView.optionsModel.getInfo());
-//        System.out.println(navViewPanel.optionsView.optionsModel.getInfo());
         navViewPanel.addHomePanel(homePanel);
                 
     }

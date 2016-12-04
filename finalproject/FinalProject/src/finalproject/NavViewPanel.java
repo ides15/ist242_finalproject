@@ -21,6 +21,8 @@ public class NavViewPanel extends JPanel {
     private InstructionsPanel instructionsPanel;
     private CreditsPanel creditsPanel;
     public OptionsView optionsView;
+    private ProfilePanel profilePanel;
+    private PayrollPanel payrollPanel;
     
     public NavViewPanel(){
         
@@ -122,6 +124,37 @@ public class NavViewPanel extends JPanel {
         
         remove(splash);
         
+    }
+    
+    public void addProfilePanel(ProfilePanel profilePanel){
+        this.profilePanel = profilePanel;
+        
+        add(this.profilePanel);
+        
+        revalidate();
+        repaint();
+    }
+    
+    public void removeProfilePanel(){
+        if(this.profilePanel != null){
+            remove(this.profilePanel);
+            
+        }
+    }
+    
+    public void addPayrollPanel(PayrollPanel payrollPanel){
+        this.payrollPanel= payrollPanel;
+        
+        add(this.payrollPanel);
+        
+        revalidate();
+        repaint();
+    }
+    
+    public void removePayrollPanel(){
+        if(this.payrollPanel != null){
+            remove(this.payrollPanel);
+        }
     }
     
 }

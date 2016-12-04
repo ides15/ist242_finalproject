@@ -24,7 +24,7 @@ public class Person {
     private double salary;
     private double hours;
     
-    private Person() {
+    Person() {
         
         name = "John Ide";
         age = "20";

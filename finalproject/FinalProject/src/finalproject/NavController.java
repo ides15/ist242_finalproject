@@ -25,6 +25,9 @@ public class NavController {
     public OptionsView optionsView;
     public OptionsModel optionsModel;
     public OptionsController optionsController;
+    private ProfilePanel profilePanel;
+    private PayrollPanel payrollPanel;
+    private Person person = new Person();
     
     public NavController(NavModel navModel, NavView navView) {
         
@@ -38,11 +41,15 @@ public class NavController {
         optionsView = new OptionsView(optionsModel);
         optionsModel = new OptionsModel();
         optionsController = new OptionsController(optionsModel, optionsView);
+        profilePanel = new ProfilePanel(person);
+        payrollPanel = new PayrollPanel(person);
         
         navView.addInstructionsButtonListener(new InstructionsButtonListener());
         navView.addHomeButtonListener(new HomeButtonListener());
         navView.addCreditsButtonListener(new CreditsButtonListener());
         navView.addOptionsButtonListener(new OptionsButtonListener());
+        navView.addPayrollButtonListener(new PayrollButtonListener());
+        navView.addProfileButtonListener(new ProfileButtonListener());
     }
     
     public class InstructionsButtonListener implements ActionListener {
@@ -87,6 +94,23 @@ public class NavController {
             
         }
                
+    }
+     public class ProfileButtonListener implements ActionListener{
+        
+        @Override
+        public void actionPerformed(ActionEvent e){
+            
+            navView.switchToProfilePanel(profilePanel);
+        }
+    }
+    
+    public class PayrollButtonListener implements ActionListener{
+        
+        @Override
+        public void actionPerformed(ActionEvent e){
+            
+            navView.switchToPayrollPanel(payrollPanel);
+        }
     }
     
 }

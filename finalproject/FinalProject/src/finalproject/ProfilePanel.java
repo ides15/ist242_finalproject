@@ -35,6 +35,8 @@ public class ProfilePanel extends JPanel implements ActionListener{
     
     private JButton saveButton;
     
+    private JLabel dataSaved;
+    
     private Person person;
 
     public ProfilePanel(Person person) {
@@ -50,6 +52,7 @@ public class ProfilePanel extends JPanel implements ActionListener{
         name = new JLabel("Name: ");
         age = new JLabel("Age: ");
         address = new JLabel("Address: ");
+        dataSaved = new JLabel();
         
         userField = new JTextField(person.getUsername());
         passField = new JTextField(person.getPassword());
@@ -75,6 +78,7 @@ public class ProfilePanel extends JPanel implements ActionListener{
         add(address);
         add(addressField);
         add(saveButton);
+        add(dataSaved);
         
     }
 
@@ -86,6 +90,7 @@ public class ProfilePanel extends JPanel implements ActionListener{
         person.setName(nameField.getText());
         person.setAge(ageField.getText());
         person.setAddress(addressField.getText());
+        dataSaved.setText("Data Saved.");
                 
     }
     

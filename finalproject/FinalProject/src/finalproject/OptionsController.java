@@ -5,8 +5,10 @@
  */
 package finalproject;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.text.StyleConstants;
 
 /**
  *
@@ -23,6 +25,9 @@ public class OptionsController {
         this.optionsView = optionsView;
         
         optionsView.addSaveButtonListener(new SaveButtonListener());
+        optionsView.addRedButtonListener(new RedButtonListener());
+        optionsView.addBlueButtonListener(new BlueButtonListener());
+        optionsView.addGreenButtonListener(new GreenButtonListener());
     }
     
     public class SaveButtonListener implements ActionListener {
@@ -30,7 +35,7 @@ public class OptionsController {
         @Override
         public void actionPerformed(ActionEvent e) {
             
-            optionsModel.setInfo(optionsView.backgroundColor.getText(), 
+            optionsModel.setInfo(optionsView.backgroundColor.toString(), 
                         optionsView.fontSize.getValue(), 
                         optionsView.pageSize.getValue());
                 
@@ -39,5 +44,39 @@ public class OptionsController {
         }
             
     }
+    
+public class RedButtonListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+            optionsView.changeBackgroundRed();
         
+        
+        }
+            
+    }
+public class BlueButtonListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+            optionsView.changeBackgroundBlue();
+        
+        
+        }
+            
+    }
+
+public class GreenButtonListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+            optionsView.changeBackgroundGreen();
+        
+        
+        }
+            
+    }
 }

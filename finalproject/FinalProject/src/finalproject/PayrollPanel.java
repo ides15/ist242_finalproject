@@ -24,8 +24,7 @@ public class PayrollPanel extends JPanel {
 
     public PayrollPanel(Person person) {
         
-        company = new JLabel();
-        company.setText("Company :" + person.getCompany());
+        company = new JLabel("Company: " + person.getCompany());
         currentPeriod = new JLabel("Current Paycheck:" + person.getPaycheck());
         YTDPay = new JLabel("YTD Pay: " + person.getYTDPay());
         taxes = new JLabel("Taxes: " + person.getTaxesTaken());

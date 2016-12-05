@@ -38,6 +38,7 @@ public class OptionsController {
             optionsModel.setInfo(optionsView.backgroundColor.toString(), 
                         optionsView.fontSize.getValue(), 
                         optionsView.pageSize.getValue());
+            
                 
             optionsView.summaryLabel.setText(optionsModel.getInfo());
 

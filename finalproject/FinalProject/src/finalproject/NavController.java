@@ -1,5 +1,6 @@
 package finalproject;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,6 +22,7 @@ public class NavController {
     public HomePanel homePanel;
     private InstructionsPanel instructionsPanel;
     private CreditsPanel creditsPanel;
+    private Color backgroundColor;
     
     public OptionsView optionsView;
     public OptionsModel optionsModel;
@@ -44,6 +46,8 @@ public class NavController {
         profilePanel = new ProfilePanel(person);
         payrollPanel = new PayrollPanel(person);
         
+        backgroundColor = Color.WHITE;
+        
         navView.addInstructionsButtonListener(new InstructionsButtonListener());
         navView.addHomeButtonListener(new HomeButtonListener());
         navView.addCreditsButtonListener(new CreditsButtonListener());
@@ -52,12 +56,18 @@ public class NavController {
         navView.addProfileButtonListener(new ProfileButtonListener());
     }
     
+    public void setColor(Color background){
+        this.backgroundColor = background;
+    }
+    
     public class InstructionsButtonListener implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
 
+            instructionsPanel.setBackground(backgroundColor);
             navView.switchToInstructionsPanel(instructionsPanel);
+            
             
         }        
     
@@ -68,8 +78,10 @@ public class NavController {
         @Override
         public void actionPerformed(ActionEvent e) {
             
+            homePanel.setBackground(backgroundColor);
             navView.switchToHomePanel(homePanel);
             homePanel.optionsLabel.setText(optionsModel.getInfo());
+            
                         
         }
         
@@ -79,6 +91,7 @@ public class NavController {
         @Override
         public void actionPerformed(ActionEvent e){
             
+            creditsPanel.setBackground(backgroundColor);
             navView.switchToCreditsPanel(creditsPanel);
             
         }
@@ -90,6 +103,7 @@ public class NavController {
         @Override
         public void actionPerformed(ActionEvent e) {
             
+            optionsView.setBackground(backgroundColor);
             navView.switchToOptionsPanel(optionsView);
             
         }
@@ -100,6 +114,7 @@ public class NavController {
         @Override
         public void actionPerformed(ActionEvent e){
             
+            profilePanel.setBackground(backgroundColor);
             navView.switchToProfilePanel(profilePanel);
         }
     }
@@ -109,9 +124,12 @@ public class NavController {
         @Override
         public void actionPerformed(ActionEvent e){
             
+            payrollPanel.setBackground(backgroundColor);
             navView.switchToPayrollPanel(payrollPanel);
         }
     }
+    
+   
     
 }
 

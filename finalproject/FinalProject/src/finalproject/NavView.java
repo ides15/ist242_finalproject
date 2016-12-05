@@ -38,14 +38,12 @@ public class NavView extends JFrame {
         navViewPanel.removeHomePanel();
         navViewPanel.removeCreditsPanel();
         navViewPanel.removeOptionsView();
-<<<<<<< HEAD
-=======
+       
+        
+        
         navViewPanel.removeProfilePanel();
         navViewPanel.removePayrollPanel();
-        //abel.setText(
-//                navViewPanel.optionsView.optionsModel.getInfo());
-//        System.out.println(navViewPanel.optionsView.optionsModel.getInfo());
->>>>>>> 327ff00f12b491e2a0e183f7f1f67d3ad78b9543
+        
         navViewPanel.addHomePanel(homePanel);
                 
     }

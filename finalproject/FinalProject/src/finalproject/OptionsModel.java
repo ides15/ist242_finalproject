@@ -5,20 +5,22 @@
  */
 package finalproject;
 
+import java.awt.Color;
+
 /**
  *
  * @author John Ide | JCI5048 | PSU 2018
  */
 public class OptionsModel {
     
-    private String backgroundColor;
+    public Color backgroundColor;
     
     private int fontSize;
     private int pageSize;
     
     public OptionsModel() {
         
-        this.backgroundColor = "white";
+        this.backgroundColor = Color.WHITE;
         this.fontSize = 5;
         this.pageSize = 5;
         
@@ -26,7 +28,8 @@ public class OptionsModel {
     
     public void setInfo(String backgroundColor, int fontSize, int pageSize) {
         
-        setBackgroundColor(backgroundColor);
+        
+        
         setFontSize(fontSize);
         setPageSize(pageSize);
         
@@ -40,11 +43,11 @@ public class OptionsModel {
         
     }
 
-    public String getBackgroundColor() {
+    public Color getBackgroundColor() {
         return backgroundColor;
     }
 
-    public void setBackgroundColor(String backgroundColor) {
+    public void setBackgroundColor(Color backgroundColor) {
         this.backgroundColor = backgroundColor;
     }
 

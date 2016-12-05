@@ -5,6 +5,7 @@
  */
 package finalproject;
 
+import java.awt.Color;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -21,8 +22,11 @@ public class OptionsView extends JPanel {
     public JLabel fontSizeLabel;
     public JLabel pageSizeLabel;
     public JLabel summaryLabel;
+    JLabel backgroundColor;
     
-    public JTextField backgroundColor;
+    private JButton redButton;
+    private JButton blueButton;
+    private JButton greenButton;
     
     public JSlider fontSize;
     public JSlider pageSize;
@@ -35,13 +39,20 @@ public class OptionsView extends JPanel {
         
         this.optionsModel = optionsModel;
         
-        backgroundColor = new JTextField("Set the background color: ");
+        redButton = new JButton("Red");
+        
+        blueButton = new JButton("Blue");
+        
+        greenButton = new JButton("Green");
         
         fontSizeLabel = new JLabel("Choose the font size: ");
         
         pageSizeLabel = new JLabel("Choose the page size: ");
         
         summaryLabel = new JLabel("No options selected.");
+        
+        backgroundColor = new JLabel("Background Color:");
+        
         
         fontSize = new JSlider(JSlider.HORIZONTAL, 1, 10, 5);
         fontSize.setMajorTickSpacing(1);
@@ -56,6 +67,9 @@ public class OptionsView extends JPanel {
         saveButton = new JButton("save button");
         
         add(backgroundColor);
+        add(redButton);
+        add(blueButton);
+        add(greenButton);
         add(fontSizeLabel);
         add(fontSize);
         add(pageSizeLabel);
@@ -72,4 +86,30 @@ public class OptionsView extends JPanel {
         
     }
     
+    public void addRedButtonListener(ActionListener al){
+        
+        redButton.addActionListener(al);
+    }
+    
+    public void addBlueButtonListener(ActionListener al){
+        
+        blueButton.addActionListener(al);
+    }
+    
+    public void addGreenButtonListener(ActionListener al){
+        
+        greenButton.addActionListener(al);
+    }
+    
+    public void changeBackgroundRed(){
+        setBackground(Color.RED);
+    }
+    
+     public void changeBackgroundBlue(){
+        setBackground(Color.BLUE);
+    }
+     
+      public void changeBackgroundGreen(){
+        setBackground(Color.GREEN);
+    }
 }

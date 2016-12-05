@@ -10,6 +10,7 @@ package finalproject;
  * @author John Ide | JCI5048 | PSU 2018
  */
 public class Person {
+    
     private String name;
     private String age;
     private String address;

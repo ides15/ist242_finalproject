@@ -27,7 +27,7 @@ public class HomePanel extends JPanel {
         
         optionsLabel = new JLabel("No options selected.");
         add(optionsLabel);
-        optionsLabel.setBounds(150, 100, 400, 50);
+        optionsLabel.setBounds(50, 100, 500, 50);
         
     }
     

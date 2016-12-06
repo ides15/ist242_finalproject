@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.ResultSet;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -47,6 +48,24 @@ public class SplashPanel extends JPanel implements ActionListener {
       
             Statement stmt = con.createStatement();
             String SQL = "select * from Person";
+            
+            ResultSet rs = stmt.executeQuery(SQL);
+            
+            rs.next();
+            String name = rs.getString("name");
+            int age = rs.getInt("age");
+            String address = rs.getString("address");
+            String email = rs.getString("email");
+            String user = rs.getString("username");
+            String pass = rs.getString("password");
+            String company = rs.getString("company");
+            double salary = rs.getDouble("salary");
+            double hours = rs.getDouble("hours");
+
+            System.out.println(name + " " + age + " " + address + " " +
+                    email + " " + user + " " + pass + " " + company + " " + 
+                    salary + " " + hours);            
+            
         }
         
         catch(SQLException err) {

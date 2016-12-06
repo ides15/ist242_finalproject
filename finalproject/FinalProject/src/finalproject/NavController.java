@@ -76,9 +76,16 @@ public class NavController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            
+            if(db.verified == true) {
 
-            instructionsPanel.setBackground(backgroundColor);
-            navView.switchToInstructionsPanel(instructionsPanel);
+                instructionsPanel.setBackground(backgroundColor);
+                navView.switchToInstructionsPanel(instructionsPanel);
+                
+            }
+            
+            else
+                System.out.println("not verified instructions");
             
         }        
     
@@ -89,9 +96,16 @@ public class NavController {
         @Override
         public void actionPerformed(ActionEvent e) {
             
-            homePanel.setBackground(backgroundColor);
-            navView.switchToHomePanel(homePanel);
-            homePanel.optionsLabel.setText(optionsModel.getInfo());
+            if(db.verified == true) {
+                
+                homePanel.setBackground(backgroundColor);
+                navView.switchToHomePanel(homePanel);
+                homePanel.optionsLabel.setText(optionsModel.getInfo());
+                
+            }
+            
+            else
+                System.out.println("not verified home");
                    
         }
         
@@ -102,8 +116,15 @@ public class NavController {
         @Override
         public void actionPerformed(ActionEvent e){
             
-            creditsPanel.setBackground(backgroundColor);
-            navView.switchToCreditsPanel(creditsPanel);
+            if(db.verified == true) {
+            
+                creditsPanel.setBackground(backgroundColor);
+                navView.switchToCreditsPanel(creditsPanel);
+            
+            }
+            
+            else
+                System.out.println("not verified credits");
             
         }
         
@@ -114,8 +135,15 @@ public class NavController {
         @Override
         public void actionPerformed(ActionEvent e) {
             
-            optionsView.setBackground(backgroundColor);
-            navView.switchToOptionsPanel(optionsView);
+            if(db.verified == true) {
+            
+                optionsView.setBackground(backgroundColor);
+                navView.switchToOptionsPanel(optionsView);
+            
+            }
+            
+            else
+                System.out.println("not verified options");
             
         }
                
@@ -126,8 +154,15 @@ public class NavController {
         @Override
         public void actionPerformed(ActionEvent e) {
             
-            profilePanel.setBackground(backgroundColor);
-            navView.switchToProfilePanel(profilePanel);
+            if(db.verified == true) {
+            
+                profilePanel.setBackground(backgroundColor);
+                navView.switchToProfilePanel(profilePanel);
+            
+            }
+            
+            else
+                System.out.println("not verified profile");
             
         }
         
@@ -138,8 +173,15 @@ public class NavController {
         @Override
         public void actionPerformed(ActionEvent e) {
             
-            payrollPanel.setBackground(backgroundColor);
-            navView.switchToPayrollPanel(payrollPanel);
+            if(db.verified == true) {
+            
+                payrollPanel.setBackground(backgroundColor);
+                navView.switchToPayrollPanel(payrollPanel);
+            
+            }
+            
+            else
+                System.out.println("not verified payroll");
             
         }
         

@@ -14,20 +14,15 @@ import javax.swing.JPanel;
  */
 public class HomePanel extends JPanel {
     
-    private JLabel homeLabel;
     public JLabel optionsLabel;
     
     public HomePanel() {
         
         setLayout(null);
         
-        homeLabel = new JLabel("Home");
-        add(homeLabel);
-        homeLabel.setBounds(275, 10, 100, 100);
-        
         optionsLabel = new JLabel("No options selected.");
         add(optionsLabel);
-        optionsLabel.setBounds(50, 100, 500, 50);
+        optionsLabel.setBounds(250, 50, 500, 50);
         
     }
     

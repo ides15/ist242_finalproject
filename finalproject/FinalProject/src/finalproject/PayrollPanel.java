@@ -24,19 +24,32 @@ public class PayrollPanel extends JPanel {
 
     public PayrollPanel(Person person) {
         
+        setLayout(null);
+        
         company = new JLabel("Company: " + person.getCompany());
-        currentPeriod = new JLabel("Current Paycheck:" + person.getPaycheck());
+        currentPeriod = new JLabel("Current Paycheck: " + person.getPaycheck());
         YTDPay = new JLabel("YTD Pay: " + person.getYTDPay());
         taxes = new JLabel("Taxes: " + person.getTaxesTaken());
         salary = new JLabel("Salary: " + person.getSalary());
         hoursWorked = new JLabel("Hours Worked: " + person.getHours());
         
         add(company);
+        company.setBounds(350, 50, 300, 30);
+        
         add(currentPeriod);
+        currentPeriod.setBounds(350, 100, 300, 30);
+        
         add(YTDPay);
+        YTDPay.setBounds(350, 150, 300, 30);
+        
         add(taxes);
+        taxes.setBounds(350, 200, 300, 30);
+        
         add(salary);
+        salary.setBounds(350, 250, 300, 30);
+        
         add(hoursWorked);
+        hoursWorked.setBounds(350, 300, 300, 30);
         
     }
     

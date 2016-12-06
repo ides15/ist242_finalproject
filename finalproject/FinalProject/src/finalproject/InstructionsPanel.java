@@ -36,7 +36,7 @@ public class InstructionsPanel extends JPanel {
                 + "system.</html>");
         
         add(instructionsLabel);
-        instructionsLabel.setBounds(350, 100, 500, 300);
+        instructionsLabel.setBounds(250, 100, 500, 300);
         
     }
     

@@ -77,14 +77,16 @@ public class LoginPanel extends JPanel implements ActionListener {
         
         if(event == submitButton) {
             
-            String verify = "select password from Person where username = '" + usernameTextField.getText() + "'";
+            String verify = "select password from Person where username = '" 
+                    + usernameTextField.getText() + "'";
             
-            if(db.createStatement(verify, "password").equals(passwordTextField.getText())) {
+            if(db.createStatement(verify, "password").equals(passwordTextField.getText())) {    // if username matches password
                 
                 resultLabel.setText("Login verified.");
                 add(resultLabel);
                 resultLabel.setBounds(350, 350, 300, 30);
-                                
+                db.setVerified(true);
+                                                
             }
             
             else {
@@ -92,7 +94,8 @@ public class LoginPanel extends JPanel implements ActionListener {
                 resultLabel.setText("Incorrect username or password, please try again.");
                 add(resultLabel);
                 resultLabel.setBounds(350, 350, 300, 30);
-                                
+                db.setVerified(false);
+                                                
             }
                         
         }

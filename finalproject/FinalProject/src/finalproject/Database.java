@@ -18,7 +18,11 @@ public class Database {
     
     public Connection con;
     
+    public boolean verified;
+    
     public Database() {
+        
+        verified = false;
                 
         try {
             
@@ -78,6 +82,13 @@ public class Database {
             return err.getMessage();
             
         }
+        
+    }
+    
+    public void setVerified(boolean verified) {
+        
+        this.verified = verified;
+        System.out.println("verified has been set to " + verified);
         
     }
     

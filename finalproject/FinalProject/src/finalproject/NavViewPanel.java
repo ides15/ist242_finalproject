@@ -23,6 +23,7 @@ public class NavViewPanel extends JPanel {
     public OptionsView optionsView;
     private ProfilePanel profilePanel;
     private PayrollPanel payrollPanel;
+    private LoginPanel loginPanel;
     
     public NavViewPanel(){
         
@@ -42,6 +43,17 @@ public class NavViewPanel extends JPanel {
     public void addSplash(NavView navView) {
         
         add(navView, BorderLayout.CENTER);
+        
+        revalidate();
+        repaint();
+        
+    }
+    
+    public void addLoginPanel(LoginPanel loginPanel) {
+        
+        this.loginPanel = loginPanel;
+        
+        add(loginPanel, BorderLayout.CENTER);
         
         revalidate();
         repaint();
@@ -96,6 +108,13 @@ public class NavViewPanel extends JPanel {
         
         if(this.homePanel != null)
             remove(this.homePanel);
+        
+    }
+    
+    public void removeLoginPanel() {
+        
+        if(this.loginPanel != null)
+            remove(this.loginPanel);
         
     }
     

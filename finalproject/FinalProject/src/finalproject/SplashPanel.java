@@ -23,7 +23,6 @@ import javax.swing.JPanel;
 public class SplashPanel extends JPanel implements ActionListener {
     
     private JButton splashPictureButton;
-    private JButton loginButton;
     
     public SplashPanel() {
         
@@ -32,11 +31,6 @@ public class SplashPanel extends JPanel implements ActionListener {
         splashPictureButton = new JButton(new ImageIcon("src/images/dollareyes.png"));
         add(splashPictureButton);
         splashPictureButton.setBounds(125, 50, 350, 350);
-                
-        loginButton = new JButton("Login");
-        add(loginButton);
-        loginButton.setBounds(250, 465, 100, 30);
-        loginButton.addActionListener(this);
                 
         try {
             
@@ -73,6 +67,7 @@ public class SplashPanel extends JPanel implements ActionListener {
             System.out.println(err.getMessage());
             
         }
+        
     }
 
     @Override
@@ -81,7 +76,5 @@ public class SplashPanel extends JPanel implements ActionListener {
         
         
     }
-    
-
     
 }

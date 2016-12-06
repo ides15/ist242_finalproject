@@ -22,13 +22,15 @@ public class NavController {
     public HomePanel homePanel;
     private InstructionsPanel instructionsPanel;
     private CreditsPanel creditsPanel;
-    private Color backgroundColor;
-    
+    private LoginPanel loginPanel;
     public OptionsView optionsView;
     public OptionsModel optionsModel;
     public OptionsController optionsController;
     private ProfilePanel profilePanel;
     private PayrollPanel payrollPanel;
+    
+    private Color backgroundColor;
+    
     private Person person = new Person();
     
     public NavController(NavModel navModel, NavView navView) {
@@ -37,9 +39,9 @@ public class NavController {
         this.navView = navView;
         
         homePanel = new HomePanel();
+        loginPanel = new LoginPanel();
         instructionsPanel = new InstructionsPanel();
         creditsPanel = new CreditsPanel();
-        
         optionsView = new OptionsView(optionsModel);
         optionsModel = new OptionsModel();
         optionsController = new OptionsController(optionsModel, optionsView);
@@ -54,6 +56,8 @@ public class NavController {
         navView.addOptionsButtonListener(new OptionsButtonListener());
         navView.addPayrollButtonListener(new PayrollButtonListener());
         navView.addProfileButtonListener(new ProfileButtonListener());
+        navView.addLoginButtonListener(new LoginButtonListener());
+                
     }
     
     public void setColor(Color background){
@@ -68,7 +72,6 @@ public class NavController {
             instructionsPanel.setBackground(backgroundColor);
             navView.switchToInstructionsPanel(instructionsPanel);
             
-            
         }        
     
     }
@@ -81,11 +84,11 @@ public class NavController {
             homePanel.setBackground(backgroundColor);
             navView.switchToHomePanel(homePanel);
             homePanel.optionsLabel.setText(optionsModel.getInfo());
-            
-                        
+                   
         }
         
     }
+    
     public class CreditsButtonListener implements ActionListener {
         
         @Override
@@ -109,24 +112,41 @@ public class NavController {
         }
                
     }
-     public class ProfileButtonListener implements ActionListener{
+    
+    public class ProfileButtonListener implements ActionListener {
         
         @Override
-        public void actionPerformed(ActionEvent e){
+        public void actionPerformed(ActionEvent e) {
             
             profilePanel.setBackground(backgroundColor);
             navView.switchToProfilePanel(profilePanel);
+            
         }
+        
     }
     
-    public class PayrollButtonListener implements ActionListener{
+    public class PayrollButtonListener implements ActionListener {
         
         @Override
-        public void actionPerformed(ActionEvent e){
+        public void actionPerformed(ActionEvent e) {
             
             payrollPanel.setBackground(backgroundColor);
             navView.switchToPayrollPanel(payrollPanel);
+            
         }
+        
+    }
+    
+    public class LoginButtonListener implements ActionListener {
+        
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+            loginPanel.setBackground(backgroundColor);
+            navView.switchToLoginPanel(loginPanel);
+            
+        }
+        
     }
     
    

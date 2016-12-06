@@ -23,11 +23,24 @@ public class NavView extends JFrame {
         this.model = model;
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(600,600);
+        setSize(1000, 600);
         
         navViewPanel = new NavViewPanel();
         
         add(navViewPanel);
+        
+    }
+    
+    public void switchToLoginPanel(LoginPanel loginPanel) {
+        
+        navViewPanel.removeInstructionsPanel();
+        navViewPanel.removeSplash();
+        navViewPanel.removeCreditsPanel();
+        navViewPanel.removeOptionsView();
+        navViewPanel.removeProfilePanel();
+        navViewPanel.removePayrollPanel();
+        navViewPanel.removeHomePanel();
+        navViewPanel.addLoginPanel(loginPanel);
         
     }
     
@@ -37,10 +50,9 @@ public class NavView extends JFrame {
         navViewPanel.removeSplash();
         navViewPanel.removeCreditsPanel();
         navViewPanel.removeOptionsView();
-
         navViewPanel.removeProfilePanel();
         navViewPanel.removePayrollPanel();
-
+        navViewPanel.removeLoginPanel();
         navViewPanel.addHomePanel(homePanel);
                 
     }
@@ -53,6 +65,7 @@ public class NavView extends JFrame {
         navViewPanel.removeOptionsView();
         navViewPanel.removeProfilePanel();
         navViewPanel.removePayrollPanel();
+        navViewPanel.removeLoginPanel();
         navViewPanel.addInstructionsPanel(instructionsPanel);
         
     }
@@ -65,6 +78,7 @@ public class NavView extends JFrame {
         navViewPanel.removeOptionsView();
         navViewPanel.removeProfilePanel();
         navViewPanel.removePayrollPanel();
+        navViewPanel.removeLoginPanel();
         navViewPanel.addCreditsPanel(creditsPanel);
                 
     }
@@ -77,6 +91,7 @@ public class NavView extends JFrame {
         navViewPanel.removeCreditsPanel();
         navViewPanel.removeProfilePanel();
         navViewPanel.removePayrollPanel();
+        navViewPanel.removeLoginPanel();
         navViewPanel.addOptionsView(optionsView);
                 
     }
@@ -88,6 +103,7 @@ public class NavView extends JFrame {
         navViewPanel.removeCreditsPanel();
         navViewPanel.removePayrollPanel();
         navViewPanel.removeOptionsView();
+        navViewPanel.removeLoginPanel();
         navViewPanel.addProfilePanel(profilePanel);
         
    }
@@ -99,6 +115,7 @@ public class NavView extends JFrame {
         navViewPanel.removeCreditsPanel();
         navViewPanel.removeProfilePanel();
         navViewPanel.removeOptionsView();
+        navViewPanel.removeLoginPanel();
         navViewPanel.addPayrollPanel(payrollPanel);
    }
     
@@ -126,14 +143,22 @@ public class NavView extends JFrame {
         
     }
     
-     public void addProfileButtonListener(ActionListener al){
+     public void addProfileButtonListener(ActionListener al) {
         
         navViewPanel.nav.profileButton.addActionListener(al);
+        
     }
     
-    public void addPayrollButtonListener(ActionListener al){
+    public void addPayrollButtonListener(ActionListener al) {
         
         navViewPanel.nav.payrollButton.addActionListener(al);
+        
+    }
+    
+    public void addLoginButtonListener(ActionListener al) {
+        
+        navViewPanel.nav.loginButton.addActionListener(al);
+                
     }
     
 }

@@ -21,6 +21,7 @@ public class NavPanel extends JPanel {
     public JButton homeButton;
     public JButton profileButton;
     public JButton payrollButton;
+    public JButton loginButton;
     public JButton logoffButton;
     
     public NavPanel() {
@@ -31,8 +32,11 @@ public class NavPanel extends JPanel {
         homeButton = new JButton("Home");
         profileButton = new JButton("Profile");
         payrollButton = new JButton("Payroll");
+        loginButton = new JButton("Login");
         logoffButton = new JButton("Logoff");
         
+        // if(logged in != true)
+        add(loginButton);
         add(homeButton);
         add(profileButton);
         add(payrollButton);
@@ -40,7 +44,9 @@ public class NavPanel extends JPanel {
         add(optionsButton);
         add(instructionsButton);
         add(creditsButton);
-//        add(logoffButton);
+        
+        // if(logged in == true)
+              add(logoffButton);
         
     }
 

@@ -35,7 +35,7 @@ public class OptionsController {
         @Override
         public void actionPerformed(ActionEvent e) {
             
-            optionsModel.setInfo(optionsView.backgroundColor.toString(), 
+            optionsModel.setInfo(optionsModel.backgroundColor.toString(), 
                         optionsView.fontSize.getValue(), 
                         optionsView.pageSize.getValue());
             

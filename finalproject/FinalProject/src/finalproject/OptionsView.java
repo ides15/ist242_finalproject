@@ -7,6 +7,7 @@ package finalproject;
 
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -22,7 +23,7 @@ public class OptionsView extends JPanel {
     public JLabel fontSizeLabel;
     public JLabel pageSizeLabel;
     public JLabel summaryLabel;
-    JLabel backgroundColor;
+    public JLabel backgroundColorLabel;
     
     private JButton redButton;
     private JButton blueButton;
@@ -37,22 +38,19 @@ public class OptionsView extends JPanel {
     
     public OptionsView(OptionsModel optionsModel) {
         
+        setLayout(null);
+        
         this.optionsModel = optionsModel;
         
         redButton = new JButton("Red");
-        
         blueButton = new JButton("Blue");
-        
         greenButton = new JButton("Green");
         
         fontSizeLabel = new JLabel("Choose the font size: ");
-        
         pageSizeLabel = new JLabel("Choose the page size: ");
-        
         summaryLabel = new JLabel("No options selected.");
         
-        backgroundColor = new JLabel("Background Color:");
-        
+        backgroundColorLabel = new JLabel("Background Color:");
         
         fontSize = new JSlider(JSlider.HORIZONTAL, 1, 10, 5);
         fontSize.setMajorTickSpacing(1);
@@ -64,18 +62,31 @@ public class OptionsView extends JPanel {
         pageSize.setPaintLabels(true);
         pageSize.setPaintTicks(true);
         
-        saveButton = new JButton("save button");
+        saveButton = new JButton("Save");
         
-        add(backgroundColor);
+        add(backgroundColorLabel);
+        backgroundColorLabel.setBounds(50, 50, 120, 30);
         add(redButton);
+        redButton.setBounds(200, 50, 75, 30);
         add(blueButton);
+        blueButton.setBounds(300, 50, 75, 30);
         add(greenButton);
+        greenButton.setBounds(400, 50, 75, 30);
+        
         add(fontSizeLabel);
+        fontSizeLabel.setBounds(50, 100, 150, 50);
         add(fontSize);
+        fontSize.setBounds(200, 100, 250, 50);
+        
         add(pageSizeLabel);
+        pageSizeLabel.setBounds(50, 175, 150, 50);
         add(pageSize);
+        pageSize.setBounds(200, 175, 250, 50);
+        
         add(saveButton);
+        saveButton.setBounds(50, 250, 100, 30);
         add(summaryLabel);
+        summaryLabel.setBounds(50, 300, 600, 30);
         
         setVisible(true);
     }
@@ -89,27 +100,36 @@ public class OptionsView extends JPanel {
     public void addRedButtonListener(ActionListener al){
         
         redButton.addActionListener(al);
+        
     }
     
     public void addBlueButtonListener(ActionListener al){
         
         blueButton.addActionListener(al);
+        
     }
     
     public void addGreenButtonListener(ActionListener al){
         
         greenButton.addActionListener(al);
+        
     }
     
-    public void changeBackgroundRed(){
+    public void changeBackgroundRed() {
+        
         setBackground(Color.RED);
+        
     }
     
-     public void changeBackgroundBlue(){
+     public void changeBackgroundBlue() {
+         
         setBackground(Color.BLUE);
+        
     }
      
-      public void changeBackgroundGreen(){
+      public void changeBackgroundGreen() {
+          
         setBackground(Color.GREEN);
+        
     }
 }

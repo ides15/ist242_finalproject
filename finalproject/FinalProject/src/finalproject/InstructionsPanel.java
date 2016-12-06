@@ -19,7 +19,7 @@ public class InstructionsPanel extends JPanel {
     public InstructionsPanel() {
         
         instructionsLabel = new JLabel("<html>Instructions: "
-                + "<br>The login button will take you to the login page."
+                + "<br><br>The login button will take you to the login page."
                 + "<br>The options button will give you the options that you can"
                 + "visually change."
                 + "<br>The instructions button will take you to this page."

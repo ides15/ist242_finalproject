@@ -24,9 +24,9 @@ public class LoginPanel extends JPanel implements ActionListener {
     private JTextField usernameTextField, passwordTextField;
     private JButton createUserButton, submitButton;
     
-    public LoginPanel() {
+    public LoginPanel(Database db) {
         
-        db = new Database();
+        this.db = db;
         
         setLayout(null);
         

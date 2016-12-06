@@ -16,8 +16,10 @@ import java.awt.event.ActionListener;
  */
 public class NavController {
     
-    NavModel navModel;
-    NavView navView;
+    private NavModel navModel;
+    private NavView navView;
+    
+    public Database db;
     
     public HomePanel homePanel;
     private InstructionsPanel instructionsPanel;
@@ -33,13 +35,17 @@ public class NavController {
     
     private Person person = new Person();
     
-    public NavController(NavModel navModel, NavView navView) {
+    public NavController(NavModel navModel, NavView navView, Database db) {
         
         this.navModel = navModel;
         this.navView = navView;
+        this.db = db;
+        
+        if(db.verified == true) System.out.println("db is verified");
+        if(db.verified == false) System.out.println("db is not verified");
         
         homePanel = new HomePanel();
-        loginPanel = new LoginPanel();
+        loginPanel = new LoginPanel(db);
         instructionsPanel = new InstructionsPanel();
         creditsPanel = new CreditsPanel();
         optionsView = new OptionsView(optionsModel);
@@ -60,8 +66,10 @@ public class NavController {
                 
     }
     
-    public void setColor(Color background){
+    public void setColor(Color background) {
+        
         this.backgroundColor = background;
+        
     }
     
     public class InstructionsButtonListener implements ActionListener {

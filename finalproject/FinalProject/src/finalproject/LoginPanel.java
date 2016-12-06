@@ -76,7 +76,16 @@ public class LoginPanel extends JPanel implements ActionListener {
         if(event == submitButton) {
             
             System.out.println("submit");
-            db.createStatement("select * from Person");
+            
+            String verify = "select password from Person where username = '" + usernameTextField.getText() + "'";
+            
+            if(db.createStatement(verify, "password").equals(passwordTextField.getText())) {
+                
+                System.out.println("login verified");
+                
+            }
+            else 
+                System.out.println("login not verified");
                         
         }
         

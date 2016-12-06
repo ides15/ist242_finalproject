@@ -38,7 +38,7 @@ public class Database {
         
     }
     
-    public void createStatement(String SQL) {
+    public String createStatement(String SQL, String column) {
         
         try {
             
@@ -46,29 +46,36 @@ public class Database {
         
             ResultSet rs = stmt.executeQuery(SQL);
             
-            while(rs.next()) {
-                
-                String name = rs.getString("name");
-                int age = rs.getInt("age");
-                String address = rs.getString("address");
-                String email = rs.getString("email");
-                String user = rs.getString("username");
-                String pass = rs.getString("password");
-                String company = rs.getString("company");
-                double salary = rs.getDouble("salary");
-                double hours = rs.getDouble("hours");
-
-                System.out.println(name + " " + age + " " + address + " " +
-                        email + " " + user + " " + pass + " " + company + " " + 
-                        salary + " " + hours);            
-                
-            }
+            String result = "";
+            
+            rs.next();
+            result = rs.getString(column);
+            
+            return result;
+            
+//            while(rs.next()) {
+//                
+//                String name = rs.getString("name");
+//                int age = rs.getInt("age");
+//                String address = rs.getString("address");
+//                String email = rs.getString("email");
+//                String user = rs.getString("username");
+//                String pass = rs.getString("password");
+//                String company = rs.getString("company");
+//                double salary = rs.getDouble("salary");
+//                double hours = rs.getDouble("hours");
+//
+//                System.out.println(name + " " + age + " " + address + " " +
+//                        email + " " + user + " " + pass + " " + company + " " + 
+//                        salary + " " + hours);           
+//                
+//            }
             
         }
         
         catch(SQLException err) {
             
-            System.out.println(err.getMessage());
+            return err.getMessage();
             
         }
         

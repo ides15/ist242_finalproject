@@ -1,6 +1,10 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package finalproject;
 
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -8,89 +12,102 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
  * @author nkc5101
  */
-public class ProfilePanel extends JPanel implements ActionListener{
-    private JLabel user;
-    private JLabel password;
-    private JLabel email;
-    private JLabel name;
-    private JLabel age;
-    private JLabel address;
+public class ProfilePanel extends JPanel implements ActionListener {
     
-    private JTextField userField;
-    private JTextField passField;
-    private JTextField emailField;
-    private JTextField nameField;
-    private JTextField ageField;
-    private JTextField addressField;
+    private JLabel userLabel;
+    private JLabel passwordLabel;
+    private JLabel emailLabel;
+    private JLabel nameLabel;
+    private JLabel ageLabel;
+    private JLabel addressLabel;
+    private JLabel dataSavedLabel;
+    
+    private JTextField userTextField;
+    private JTextField passTextField;
+    private JTextField emailTextField;
+    private JTextField nameTextField;
+    private JTextField ageTextField;
+    private JTextField addressTextField;
     
     private JButton saveButton;
-    
-    private JLabel dataSaved;
     
     private Person person;
 
     public ProfilePanel(Person person) {
         
-        GridLayout grid = new GridLayout(7,2);
-        setLayout(grid);
+        setLayout(null);
         
         this.person = person;
         
-        user = new JLabel("User: ");
-        password = new JLabel("Password: ");
-        email = new JLabel("Email: ");
-        name = new JLabel("Name: ");
-        age = new JLabel("Age: ");
-        address = new JLabel("Address: ");
-        dataSaved = new JLabel();
+        userLabel = new JLabel("User: ");
+        passwordLabel = new JLabel("Password: ");
+        emailLabel = new JLabel("Email: ");
+        nameLabel = new JLabel("Name: ");
+        ageLabel = new JLabel("Age: ");
+        addressLabel = new JLabel("Address: ");
+        dataSavedLabel = new JLabel();
         
-        userField = new JTextField(person.getUsername());
-        passField = new JTextField(person.getPassword());
-        emailField = new JTextField(person.getEmail());
-        nameField = new JTextField(person.getName());
-        ageField = new JTextField(person.getAge());
-        addressField = new JTextField(person.getAddress());
+        userTextField = new JTextField(person.getUsername());
+        passTextField = new JTextField(person.getPassword());
+        emailTextField = new JTextField(person.getEmail());
+        nameTextField = new JTextField(person.getName());
+        ageTextField = new JTextField(person.getAge());
+        addressTextField = new JTextField(person.getAddress());
         
         saveButton = new JButton("Save");
         saveButton.addActionListener(this);
         
+        add(userLabel);
+        userLabel.setBounds(350, 50, 100, 30);
+        add(userTextField);
+        userTextField.setBounds(450, 50, 200, 30);
         
-        add(user);
-        add(userField);
-        add(password);
-        add(passField);
-        add(email);
-        add(emailField);
-        add(name);
-        add(nameField);
-        add(age);
-        add(ageField);
-        add(address);
-        add(addressField);
+        add(passwordLabel);
+        passwordLabel.setBounds(350, 100, 100, 30);
+        add(passTextField);
+        passTextField.setBounds(450, 100, 200, 30);
+        
+        add(emailLabel);
+        emailLabel.setBounds(350, 150, 100, 30);
+        add(emailTextField);
+        emailTextField.setBounds(450, 150, 200, 30);
+        
+        add(nameLabel);
+        nameLabel.setBounds(350, 200, 100, 30);
+        add(nameTextField);
+        nameTextField.setBounds(450, 200, 200, 30);
+        
+        add(ageLabel);
+        ageLabel.setBounds(350, 250, 100, 30);
+        add(ageTextField);
+        ageTextField.setBounds(450, 250, 200, 30);
+        
+        add(addressLabel);
+        addressLabel.setBounds(350, 300, 100, 30);
+        add(addressTextField);
+        addressTextField.setBounds(450, 300, 200, 30);
+        
         add(saveButton);
-        add(dataSaved);
+        saveButton.setBounds(350, 375, 100, 30);
+        add(dataSavedLabel);
+        dataSavedLabel.setBounds(500, 375, 100, 30);
         
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        person.setUsername(userField.getText());
-        person.setPassword(passField.getText());
-        person.setEmail(emailField.getText());
-        person.setName(nameField.getText());
-        person.setAge(ageField.getText());
-        person.setAddress(addressField.getText());
-        dataSaved.setText("Data Saved.");
+        
+        person.setUsername(userTextField.getText());
+        person.setPassword(passTextField.getText());
+        person.setEmail(emailTextField.getText());
+        person.setName(nameTextField.getText());
+        person.setAge(ageTextField.getText());
+        person.setAddress(addressTextField.getText());
+        dataSavedLabel.setText("Data Saved.");
                 
     }
     

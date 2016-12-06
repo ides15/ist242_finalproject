@@ -7,12 +7,10 @@ package finalproject;
 
 import java.awt.Color;
 import java.awt.event.ActionListener;
-import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
-import javax.swing.JTextField;
 
 /**
  *
@@ -65,28 +63,28 @@ public class OptionsView extends JPanel {
         saveButton = new JButton("Save");
         
         add(backgroundColorLabel);
-        backgroundColorLabel.setBounds(50, 50, 120, 30);
+        backgroundColorLabel.setBounds(350, 50, 120, 30);
         add(redButton);
-        redButton.setBounds(200, 50, 75, 30);
+        redButton.setBounds(500, 50, 75, 30);
         add(blueButton);
-        blueButton.setBounds(300, 50, 75, 30);
+        blueButton.setBounds(600, 50, 75, 30);
         add(greenButton);
-        greenButton.setBounds(400, 50, 75, 30);
+        greenButton.setBounds(700, 50, 75, 30);
         
         add(fontSizeLabel);
-        fontSizeLabel.setBounds(50, 100, 150, 50);
+        fontSizeLabel.setBounds(350, 100, 150, 50);
         add(fontSize);
-        fontSize.setBounds(200, 100, 250, 50);
+        fontSize.setBounds(500, 100, 250, 50);
         
         add(pageSizeLabel);
-        pageSizeLabel.setBounds(50, 175, 150, 50);
+        pageSizeLabel.setBounds(350, 175, 150, 50);
         add(pageSize);
-        pageSize.setBounds(200, 175, 250, 50);
+        pageSize.setBounds(500, 175, 250, 50);
         
         add(saveButton);
-        saveButton.setBounds(50, 250, 100, 30);
+        saveButton.setBounds(350, 250, 100, 30);
         add(summaryLabel);
-        summaryLabel.setBounds(50, 300, 600, 30);
+        summaryLabel.setBounds(500, 250, 600, 30);
         
         setVisible(true);
     }

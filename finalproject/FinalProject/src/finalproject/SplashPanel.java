@@ -5,6 +5,7 @@
  */
 package finalproject;
 
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -26,11 +27,11 @@ public class SplashPanel extends JPanel implements ActionListener {
     
     public SplashPanel() {
         
-        setLayout(null);
+        BorderLayout border = new BorderLayout();
+        setLayout(border);
         
         splashPictureButton = new JButton(new ImageIcon("src/images/dollareyes.png"));
-        add(splashPictureButton);
-        splashPictureButton.setBounds(125, 50, 350, 350);
+        add(splashPictureButton, BorderLayout.CENTER);
                 
         try {
             

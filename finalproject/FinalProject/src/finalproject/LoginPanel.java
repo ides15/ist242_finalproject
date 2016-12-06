@@ -5,18 +5,57 @@
  */
 package finalproject;
 
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 /**
  *
  * @author John Ide | JCI5048 | PSU 2018
  */
-public class LoginPanel extends JPanel {
-    JLabel test;
+public class LoginPanel extends JPanel implements ActionListener {
     
-    LoginPanel() {
-        test = new JLabel("test");
-        add(test);
+    private JLabel usernameLabel, passwordLabel;
+    private JTextField usernameTextField, passwordTextField;
+    private JButton createUserButton, submitButton;
+    
+    public LoginPanel() {
+        
+        usernameLabel = new JLabel("Username: ");
+        passwordLabel = new JLabel("Password: ");
+        
+        usernameTextField = new JTextField();
+        passwordTextField = new JTextField();
+        
+        createUserButton = new JButton("Create User");
+        submitButton = new JButton("Submit");
+        
+        GridLayout grid = new GridLayout(3, 3, 100, 100);
+        setLayout(grid);
+        
+        add(usernameLabel);
+        add(usernameTextField);
+        add(passwordLabel);
+        add(passwordTextField);
+        add(createUserButton);
+        add(submitButton);
+        
+        createUserButton.addActionListener(this);
+        submitButton.addActionListener(this);
+                
     }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
+        
+        
+    }
+    
+    
+    
 }

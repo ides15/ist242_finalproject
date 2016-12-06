@@ -5,7 +5,6 @@
  */
 package finalproject;
 
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -25,6 +24,8 @@ public class LoginPanel extends JPanel implements ActionListener {
     
     public LoginPanel() {
         
+        setLayout(null);
+        
         usernameLabel = new JLabel("Username: ");
         passwordLabel = new JLabel("Password: ");
         
@@ -34,15 +35,23 @@ public class LoginPanel extends JPanel implements ActionListener {
         createUserButton = new JButton("Create User");
         submitButton = new JButton("Submit");
         
-        GridLayout grid = new GridLayout(3, 3, 100, 100);
-        setLayout(grid);
-        
         add(usernameLabel);
+        usernameLabel.setBounds(350, 200, 150, 30);
+        
         add(usernameTextField);
+        usernameTextField.setBounds(450, 200, 200, 30);
+        
         add(passwordLabel);
+        passwordLabel.setBounds(350, 250, 150, 30);
+        
         add(passwordTextField);
+        passwordTextField.setBounds(450, 250, 200, 30);
+        
         add(createUserButton);
+        createUserButton.setBounds(350, 300, 120, 30);
+        
         add(submitButton);
+        submitButton.setBounds(550, 300, 100, 30);
         
         createUserButton.addActionListener(this);
         submitButton.addActionListener(this);

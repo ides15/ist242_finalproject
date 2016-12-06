@@ -145,35 +145,40 @@ public class NavViewPanel extends JPanel {
         
     }
     
-    public void addProfilePanel(ProfilePanel profilePanel){
+    public void addProfilePanel(ProfilePanel profilePanel) {
+        
         this.profilePanel = profilePanel;
         
         add(this.profilePanel);
         
         revalidate();
         repaint();
+        
     }
     
-    public void removeProfilePanel(){
-        if(this.profilePanel != null){
+    public void removeProfilePanel() {
+        
+        if(this.profilePanel != null)
             remove(this.profilePanel);
-            
-        }
+        
     }
     
-    public void addPayrollPanel(PayrollPanel payrollPanel){
+    public void addPayrollPanel(PayrollPanel payrollPanel) {
+        
         this.payrollPanel= payrollPanel;
         
         add(this.payrollPanel);
         
         revalidate();
         repaint();
+        
     }
     
-    public void removePayrollPanel(){
-        if(this.payrollPanel != null){
+    public void removePayrollPanel() {
+        
+        if(this.payrollPanel != null)
             remove(this.payrollPanel);
-        }
+        
     }
     
 }

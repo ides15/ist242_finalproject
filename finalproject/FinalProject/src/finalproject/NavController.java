@@ -41,9 +41,6 @@ public class NavController {
         this.navView = navView;
         this.db = db;
         
-        if(db.verified == true) System.out.println("db is verified");
-        if(db.verified == false) System.out.println("db is not verified");
-        
         homePanel = new HomePanel();
         loginPanel = new LoginPanel(db);
         instructionsPanel = new InstructionsPanel();
@@ -63,7 +60,8 @@ public class NavController {
         navView.addPayrollButtonListener(new PayrollButtonListener());
         navView.addProfileButtonListener(new ProfileButtonListener());
         navView.addLoginButtonListener(new LoginButtonListener());
-                
+        navView.addLogoffButtonListener(new LogoffButtonListener());
+                        
     }
     
     public void setColor(Color background) {
@@ -85,8 +83,8 @@ public class NavController {
             }
             
             else
-                System.out.println("not verified instructions");
-            
+                loginPanel.resultLabel.setText("Please login to access the instructions page.");
+                        
         }        
     
     }
@@ -105,8 +103,8 @@ public class NavController {
             }
             
             else
-                System.out.println("not verified home");
-                   
+                loginPanel.resultLabel.setText("Please login to access the home page.");
+                               
         }
         
     }
@@ -124,8 +122,8 @@ public class NavController {
             }
             
             else
-                System.out.println("not verified credits");
-            
+                loginPanel.resultLabel.setText("Please login to access the credits page.");
+                        
         }
         
     }
@@ -143,8 +141,8 @@ public class NavController {
             }
             
             else
-                System.out.println("not verified options");
-            
+                loginPanel.resultLabel.setText("Please login to access the options page.");
+                        
         }
                
     }
@@ -162,8 +160,8 @@ public class NavController {
             }
             
             else
-                System.out.println("not verified profile");
-            
+                loginPanel.resultLabel.setText("Please login to access the profile page.");
+                        
         }
         
     }
@@ -181,8 +179,8 @@ public class NavController {
             }
             
             else
-                System.out.println("not verified payroll");
-            
+                loginPanel.resultLabel.setText("Please login to access the payroll page.");
+                        
         }
         
     }
@@ -194,7 +192,23 @@ public class NavController {
             
             loginPanel.setBackground(backgroundColor);
             navView.switchToLoginPanel(loginPanel);
+            loginPanel.resultLabel.setText(null);
+                        
+        }
+        
+    }
+    
+    public class LogoffButtonListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
             
+            db.setVerified(false);
+            navView.switchToLoginPanel(loginPanel);
+            loginPanel.resultLabel.setText("Please re-enter credentials.");
+            loginPanel.usernameTextField.setText(null);
+            loginPanel.passwordTextField.setText(null);
+                                                            
         }
         
     }

@@ -35,7 +35,6 @@ public class NavPanel extends JPanel {
         loginButton = new JButton("Login");
         logoffButton = new JButton("Logoff");
         
-        // if(logged in != true)
         add(loginButton);
         add(homeButton);
         add(profileButton);
@@ -44,9 +43,7 @@ public class NavPanel extends JPanel {
         add(optionsButton);
         add(instructionsButton);
         add(creditsButton);
-        
-        // if(logged in == true)
-              add(logoffButton);
+        add(logoffButton);
         
     }
 

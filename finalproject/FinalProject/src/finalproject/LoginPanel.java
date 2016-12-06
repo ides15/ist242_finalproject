@@ -20,8 +20,9 @@ public class LoginPanel extends JPanel implements ActionListener {
     
     private Database db;
     
-    private JLabel usernameLabel, passwordLabel, resultLabel;
-    private JTextField usernameTextField, passwordTextField;
+    private JLabel usernameLabel, passwordLabel;
+    public JLabel resultLabel;
+    public JTextField usernameTextField, passwordTextField;
     private JButton createUserButton, submitButton;
     
     public LoginPanel(Database db) {
@@ -86,7 +87,7 @@ public class LoginPanel extends JPanel implements ActionListener {
                 add(resultLabel);
                 resultLabel.setBounds(350, 350, 300, 30);
                 db.setVerified(true);
-                                                
+                
             }
             
             else {

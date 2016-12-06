@@ -41,7 +41,8 @@ public class NavView extends JFrame {
         navViewPanel.removePayrollPanel();
         navViewPanel.removeHomePanel();
         navViewPanel.addLoginPanel(loginPanel);
-        
+        loginPanel.resultLabel.setText("test");
+                
     }
     
     public void switchToHomePanel(HomePanel homePanel) {
@@ -96,7 +97,8 @@ public class NavView extends JFrame {
                 
     }
     
-   public void switchToProfilePanel(ProfilePanel profilePanel){
+   public void switchToProfilePanel(ProfilePanel profilePanel) {
+       
         navViewPanel.removeSplash();
         navViewPanel.removeHomePanel();
         navViewPanel.removeInstructionsPanel();
@@ -108,7 +110,8 @@ public class NavView extends JFrame {
         
    }
    
-   public void switchToPayrollPanel(PayrollPanel payrollPanel){
+   public void switchToPayrollPanel(PayrollPanel payrollPanel) {
+       
         navViewPanel.removeSplash();
         navViewPanel.removeHomePanel();
         navViewPanel.removeInstructionsPanel();
@@ -117,6 +120,7 @@ public class NavView extends JFrame {
         navViewPanel.removeOptionsView();
         navViewPanel.removeLoginPanel();
         navViewPanel.addPayrollPanel(payrollPanel);
+        
    }
     
     public void addInstructionsButtonListener(ActionListener al) {
@@ -158,6 +162,12 @@ public class NavView extends JFrame {
     public void addLoginButtonListener(ActionListener al) {
         
         navViewPanel.nav.loginButton.addActionListener(al);
+                
+    }
+    
+    public void addLogoffButtonListener(ActionListener al) {
+        
+        navViewPanel.nav.logoffButton.addActionListener(al);
                 
     }
     

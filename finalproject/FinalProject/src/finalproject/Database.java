@@ -88,7 +88,6 @@ public class Database {
     public void setVerified(boolean verified) {
         
         this.verified = verified;
-        System.out.println("verified has been set to " + verified);
         
     }
     

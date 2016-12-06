@@ -112,7 +112,19 @@ public class LoginPanel extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         
+        JButton event = (JButton)e.getSource();
         
+        if(event == createUserButton) {
+            
+            System.out.println("create user");
+            
+        }
+        
+        if(event == submitButton) {
+            
+            System.out.println("submit");
+            
+        }
         
     }
     

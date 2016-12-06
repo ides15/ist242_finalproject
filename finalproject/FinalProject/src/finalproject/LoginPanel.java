@@ -20,7 +20,7 @@ public class LoginPanel extends JPanel implements ActionListener {
     
     private Database db;
     
-    private JLabel usernameLabel, passwordLabel;
+    private JLabel usernameLabel, passwordLabel, resultLabel;
     private JTextField usernameTextField, passwordTextField;
     private JButton createUserButton, submitButton;
     
@@ -30,10 +30,12 @@ public class LoginPanel extends JPanel implements ActionListener {
         
         setLayout(null);
         
+        resultLabel = new JLabel();
+        
         usernameLabel = new JLabel("Username: ");
         passwordLabel = new JLabel("Password: ");
         
-        usernameTextField = new JTextField("jdean0");
+        usernameTextField = new JTextField();
         passwordTextField = new JTextField();
         
         createUserButton = new JButton("Create User");
@@ -75,17 +77,23 @@ public class LoginPanel extends JPanel implements ActionListener {
         
         if(event == submitButton) {
             
-            System.out.println("submit");
-            
             String verify = "select password from Person where username = '" + usernameTextField.getText() + "'";
             
             if(db.createStatement(verify, "password").equals(passwordTextField.getText())) {
                 
-                System.out.println("login verified");
-                
+                resultLabel.setText("Login verified.");
+                add(resultLabel);
+                resultLabel.setBounds(350, 350, 300, 30);
+                                
             }
-            else 
-                System.out.println("login not verified");
+            
+            else {
+                
+                resultLabel.setText("Incorrect username or password, please try again.");
+                add(resultLabel);
+                resultLabel.setBounds(350, 350, 300, 30);
+                                
+            }
                         
         }
         

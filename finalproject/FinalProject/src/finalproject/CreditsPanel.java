@@ -18,11 +18,14 @@ public class CreditsPanel extends JPanel {
     
     public CreditsPanel() {
         
+        setLayout(null);
+        
         creditsLabel = new JLabel("<html>Developers:<br><br>John Ide - ide.johnc@gmail.com"
                 + "<br>Nate Cox - nkc5010@psu.edu"
                 + "<br>Weijun Xu - wfx5003@psu.edu</html>");
         
         add(creditsLabel);
+        creditsLabel.setBounds(350, 100, 400, 300);
         
     }
 }

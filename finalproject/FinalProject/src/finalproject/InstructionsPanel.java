@@ -18,6 +18,8 @@ public class InstructionsPanel extends JPanel {
     
     public InstructionsPanel() {
         
+        setLayout(null);
+        
         instructionsLabel = new JLabel("<html>Instructions: "
                 + "<br><br>The login button will take you to the login page."
                 + "<br>The options button will give you the options that you can"
@@ -34,6 +36,7 @@ public class InstructionsPanel extends JPanel {
                 + "system.</html>");
         
         add(instructionsLabel);
+        instructionsLabel.setBounds(350, 100, 500, 300);
         
     }
     

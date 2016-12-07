@@ -20,11 +20,11 @@ public class Model {
         user.setName(name);
     }
     
-    private String getAge() {
+    private int getAge() {
         return user.getAge();
     }
     
-    private void setAge(String age) {
+    private void setAge(int age) {
         user.setAge(age);
     }
     

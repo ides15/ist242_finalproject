@@ -25,6 +25,8 @@ public class LoginPanel extends JPanel implements ActionListener {
     public JTextField usernameTextField, passwordTextField;
     private JButton createUserButton, submitButton;
     
+    public Person user;
+    
     public LoginPanel(Database db) {
         
         this.db = db;
@@ -81,13 +83,15 @@ public class LoginPanel extends JPanel implements ActionListener {
             String verify = "select password from Person where username = '" 
                     + usernameTextField.getText() + "'";
             
-            if(db.createStatement(verify, "password").equals(passwordTextField.getText())) {    // if username matches password
+            if(db.checkVerification(verify, "password").equals(passwordTextField.getText())) {    // if username matches password
                 
                 resultLabel.setText("Login verified.");
                 add(resultLabel);
                 resultLabel.setBounds(350, 350, 300, 30);
                 db.setVerified(true);
                 
+                db.setUser(usernameTextField.getText(), user);
+                                
             }
             
             else {

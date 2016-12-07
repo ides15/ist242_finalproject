@@ -33,9 +33,7 @@ public class NavController {
     
     private Color backgroundColor;
     
-    private Person person = new Person();
-    
-    public NavController(NavModel navModel, NavView navView, Database db) {
+    public NavController(NavModel navModel, NavView navView, Database db, Person user) {
         
         this.navModel = navModel;
         this.navView = navView;
@@ -48,8 +46,8 @@ public class NavController {
         optionsView = new OptionsView(optionsModel);
         optionsModel = new OptionsModel();
         optionsController = new OptionsController(optionsModel, optionsView);
-        profilePanel = new ProfilePanel(person);
-        payrollPanel = new PayrollPanel(person);
+        profilePanel = new ProfilePanel(user);
+        payrollPanel = new PayrollPanel(user);
         
         backgroundColor = Color.WHITE;
         
@@ -180,7 +178,7 @@ public class NavController {
             
             else
                 loginPanel.resultLabel.setText("Please login to access the payroll page.");
-                        
+            
         }
         
     }

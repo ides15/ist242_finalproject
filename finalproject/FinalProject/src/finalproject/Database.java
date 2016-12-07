@@ -42,7 +42,7 @@ public class Database {
         
     }
     
-    public String createStatement(String SQL, String column) {
+    public String checkVerification(String SQL, String column) {
         
         try {
             
@@ -50,36 +50,67 @@ public class Database {
         
             ResultSet rs = stmt.executeQuery(SQL);
             
-            String result = "";
-            
             rs.next();
-            result = rs.getString(column);
+            String result = rs.getString(column);
             
             return result;
-            
-//            while(rs.next()) {
-//                
-//                String name = rs.getString("name");
-//                int age = rs.getInt("age");
-//                String address = rs.getString("address");
-//                String email = rs.getString("email");
-//                String user = rs.getString("username");
-//                String pass = rs.getString("password");
-//                String company = rs.getString("company");
-//                double salary = rs.getDouble("salary");
-//                double hours = rs.getDouble("hours");
-//
-//                System.out.println(name + " " + age + " " + address + " " +
-//                        email + " " + user + " " + pass + " " + company + " " + 
-//                        salary + " " + hours);           
-//                
-//            }
             
         }
         
         catch(SQLException err) {
             
             return err.getMessage();
+            
+        }
+        
+    }
+    
+    public void setUser(String username, Person person) {
+        
+        try {
+            
+            String SQL = "select * from Person where username = '" + username + "'";
+            
+            Statement stmt = con.createStatement();
+        
+            ResultSet rs = stmt.executeQuery(SQL);
+            
+            while(rs.next()) {
+                
+                String name = rs.getString("name");
+                person.setName(name);
+                                
+                int age = rs.getInt("age");
+                person.setAge(age);
+                                
+                String address = rs.getString("address");
+                person.setAddress(address);
+                                
+                String email = rs.getString("email");
+                person.setEmail(email);
+                
+                String user = rs.getString("username");
+                person.setUsername(user);
+                
+                String pass = rs.getString("password");
+                person.setPassword(pass);
+                
+                String company = rs.getString("company");
+                person.setCompany(company);
+                
+                double salary = rs.getDouble("salary");
+                person.setSalary(salary);
+                
+                double hours = rs.getDouble("hours");
+                person.setHours(hours);
+                                
+            }
+            
+        }
+        
+        catch(SQLException err) {
+            
+            System.out.println(err.getMessage());
             
         }
         

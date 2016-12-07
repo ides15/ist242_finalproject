@@ -12,7 +12,7 @@ package finalproject;
 public class Person {
     
     private String name;
-    private String age;
+    private int age;
     private String address;
     private String email;
     private String username;
@@ -25,10 +25,10 @@ public class Person {
     private double salary;
     private double hours;
     
-    Person() {
+    public Person() {
         
         name = "John Ide";
-        age = "20";
+        age = 20;
         address = "8514 Oakford Dr.";
         email = "ide.johnc@gmail.com";
         username = "ide.johnc";
@@ -63,8 +63,16 @@ public class Person {
         return salary;
     }
     
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+    
     public double getHours() {
         return hours;
+    }
+    
+    public void setHours(double hours) {
+        this.hours = hours;
     }
 
     public String getName() {
@@ -75,11 +83,11 @@ public class Person {
         this.name = name;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 

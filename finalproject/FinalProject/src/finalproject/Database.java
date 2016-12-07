@@ -65,6 +65,30 @@ public class Database {
         
     }
     
+    public void updateUser(String username, String name, int age, 
+                           String address, String email, String password) {
+        
+        try {
+            
+            String SQL = "update Person "
+                       + "set name = '" + name + "', age = '" + age + "', "
+                       + "address = '" + address + "', email = '" + email + "', "
+                       + "password = '" + password + "' where username = '" + username + "'";
+            
+            Statement stmt = con.createStatement();
+        
+            ResultSet rs = stmt.executeQuery(SQL);
+            
+        }
+        
+        catch(SQLException err) {
+            
+            System.out.println(err.getMessage());
+            
+        }
+        
+    }
+    
     public void setUser(String username, Person person) {
         
         try {

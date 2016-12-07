@@ -90,6 +90,7 @@ public class LoginPanel extends JPanel implements ActionListener {
                 resultLabel.setBounds(350, 350, 300, 30);
                 db.setVerified(true);
                 
+                user = new Person(db);
                 db.setUser(usernameTextField.getText(), user);
                                 
             }

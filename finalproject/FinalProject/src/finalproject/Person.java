@@ -25,7 +25,9 @@ public class Person {
     private double salary;
     private double hours;
     
-    public Person() {
+    public Database db;
+    
+    public Person(Database db) {
         
         name = "John Ide";
         age = 20;

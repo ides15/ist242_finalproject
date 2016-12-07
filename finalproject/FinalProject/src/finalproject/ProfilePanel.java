@@ -108,17 +108,13 @@ public class ProfilePanel extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         
-        person.setUsername(userTextField.getText());
-        person.setPassword(passTextField.getText());
-        person.setEmail(emailTextField.getText());
-        person.setName(nameTextField.getText());
-        
         STRINGage = ageTextField.getText();
         INTage = Integer.parseInt(STRINGage);
         
-        person.setAge(INTage);
+        person.db.updateUser(userTextField.getText(), nameTextField.getText(), 
+                INTage, addressTextField.getText(), emailTextField.getText(), 
+                passTextField.getText());
         
-        person.setAddress(addressTextField.getText());
         dataSavedLabel.setText("Data Saved.");
                 
     }

@@ -3,6 +3,7 @@ package finalproject;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.text.StyleConstants;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -133,6 +134,7 @@ public class NavController {
             
             if(db.verified == true) {
             
+                setColor(optionsView.getBackground());
                 optionsView.setBackground(backgroundColor);
                 navView.switchToOptionsPanel(optionsView);
             
@@ -142,6 +144,8 @@ public class NavController {
                 loginPanel.resultLabel.setText("Please login to access the options page.");
                         
         }
+
+       
                
     }
     

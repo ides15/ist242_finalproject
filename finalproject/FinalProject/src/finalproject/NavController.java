@@ -63,12 +63,6 @@ public class NavController {
                         
     }
     
-    public void setColor(Color background) {
-        
-        this.backgroundColor = background;
-        
-    }
-    
     public class InstructionsButtonListener implements ActionListener {
 
         @Override
@@ -76,7 +70,7 @@ public class NavController {
             
             if(db.verified == true) {
 
-                instructionsPanel.setBackground(backgroundColor);
+                instructionsPanel.setBackground(optionsModel.getBackgroundColor_Color());
                 navView.switchToInstructionsPanel(instructionsPanel);
                 
             }
@@ -95,7 +89,7 @@ public class NavController {
             
             if(db.verified == true) {
                 
-                homePanel.setBackground(backgroundColor);
+                homePanel.setBackground(optionsModel.getBackgroundColor_Color());
                 navView.switchToHomePanel(homePanel);
                 homePanel.optionsLabel.setText(optionsModel.getInfo());
                 
@@ -115,7 +109,7 @@ public class NavController {
             
             if(db.verified == true) {
             
-                creditsPanel.setBackground(backgroundColor);
+                creditsPanel.setBackground(optionsModel.getBackgroundColor_Color());
                 navView.switchToCreditsPanel(creditsPanel);
             
             }
@@ -134,8 +128,7 @@ public class NavController {
             
             if(db.verified == true) {
             
-                setColor(optionsView.getBackground());
-                optionsView.setBackground(backgroundColor);
+                optionsView.setBackground(optionsModel.getBackgroundColor_Color());
                 navView.switchToOptionsPanel(optionsView);
             
             }
@@ -156,7 +149,7 @@ public class NavController {
             
             if(db.verified == true) {
             
-                profilePanel.setBackground(backgroundColor);
+                profilePanel.setBackground(optionsModel.getBackgroundColor_Color());
                 navView.switchToProfilePanel(profilePanel);
             
             }
@@ -175,7 +168,7 @@ public class NavController {
             
             if(db.verified == true) {
             
-                payrollPanel.setBackground(backgroundColor);
+                payrollPanel.setBackground(optionsModel.getBackgroundColor_Color());
                 navView.switchToPayrollPanel(payrollPanel);
             
             }
@@ -192,7 +185,7 @@ public class NavController {
         @Override
         public void actionPerformed(ActionEvent e) {
             
-            loginPanel.setBackground(backgroundColor);
+            loginPanel.setBackground(optionsModel.getBackgroundColor_Color());
             navView.switchToLoginPanel(loginPanel);
             loginPanel.resultLabel.setText(null);
                         
@@ -205,13 +198,17 @@ public class NavController {
         @Override
         public void actionPerformed(ActionEvent e) {
             
+            optionsModel.setBackgroundColor(Color.WHITE);
+            
             db.setVerified(false);
             navView.switchToLoginPanel(loginPanel);
             loginPanel.resultLabel.setText("Please re-enter credentials.");
             loginPanel.usernameTextField.setText(null);
             loginPanel.passwordTextField.setText(null);
-                                                            
-        }
+            
+                        
+                                                           
+        } 
         
     }
     

@@ -37,16 +37,13 @@ public class OptionsModel {
     
     public String getInfo() {
         
-        
-        System.out.println(getBackgroundColor());
-        
-        return "Background color: " + getBackgroundColor() 
+        return "Background color: " + getBackgroundColor_String() 
                 + ", font size: " + getFontSize() 
                 + ", page size: " + getPageSize();
         
     }
 
-    public String getBackgroundColor() {
+    public String getBackgroundColor_String() {
         
         if(String.valueOf(backgroundColor).equals("java.awt.Color[r=255,g=0,b=0]"))
             return "Red";
@@ -59,6 +56,12 @@ public class OptionsModel {
         
         else
             return "White";
+        
+    }
+    
+    public Color getBackgroundColor_Color() {
+        
+        return backgroundColor;
         
     }
 

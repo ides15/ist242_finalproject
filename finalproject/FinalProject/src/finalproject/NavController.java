@@ -1,6 +1,7 @@
 package finalproject;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.text.StyleConstants;
@@ -34,7 +35,8 @@ public class NavController {
     
     private Color backgroundColor;
     
-    public NavController(NavModel navModel, NavView navView, Database db, Person user) {
+    public NavController(NavModel navModel, NavView navView, 
+                         Database db, Person user) {
         
         this.navModel = navModel;
         this.navView = navView;
@@ -199,6 +201,9 @@ public class NavController {
         public void actionPerformed(ActionEvent e) {
             
             optionsModel.setBackgroundColor(Color.WHITE);
+            optionsView.summaryLabel.setText("No options selected.");
+            optionsView.fontSize.setValue(5);
+            optionsView.pageSize.setValue(5);
             
             db.setVerified(false);
             navView.switchToLoginPanel(loginPanel);

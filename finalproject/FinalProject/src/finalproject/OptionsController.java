@@ -8,7 +8,6 @@ package finalproject;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.text.StyleConstants;
 
 /**
  *
@@ -28,6 +27,7 @@ public class OptionsController {
         optionsView.addRedButtonListener(new RedButtonListener());
         optionsView.addBlueButtonListener(new BlueButtonListener());
         optionsView.addGreenButtonListener(new GreenButtonListener());
+        
     }
     
     public class SaveButtonListener implements ActionListener {
@@ -39,14 +39,15 @@ public class OptionsController {
                         optionsView.fontSize.getValue(), 
                         optionsView.pageSize.getValue());
             
-                
+            optionsModel.setFontSize(optionsView.fontSize.getValue());
+                        
             optionsView.summaryLabel.setText(optionsModel.getInfo());
 
         }
             
     }
     
-public class RedButtonListener implements ActionListener {
+    public class RedButtonListener implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -54,11 +55,11 @@ public class RedButtonListener implements ActionListener {
             optionsView.changeBackgroundRed();
             optionsModel.setBackgroundColor(Color.RED);
         
-        
         }
             
     }
-public class BlueButtonListener implements ActionListener {
+    
+    public class BlueButtonListener implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -66,12 +67,11 @@ public class BlueButtonListener implements ActionListener {
             optionsView.changeBackgroundBlue();
             optionsModel.setBackgroundColor(Color.BLUE);
         
-        
         }
             
     }
 
-public class GreenButtonListener implements ActionListener {
+    public class GreenButtonListener implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -79,8 +79,9 @@ public class GreenButtonListener implements ActionListener {
             optionsView.changeBackgroundGreen();
             optionsModel.setBackgroundColor(Color.GREEN);
         
-        
         }
             
     }
+    
+    
 }

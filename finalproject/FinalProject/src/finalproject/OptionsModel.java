@@ -28,8 +28,6 @@ public class OptionsModel {
     
     public void setInfo(String backgroundColor, int fontSize, int pageSize) {
         
-        
-        
         setFontSize(fontSize);
         setPageSize(pageSize);
         
@@ -60,9 +58,7 @@ public class OptionsModel {
     }
     
     public Color getBackgroundColor_Color() {
-        
         return backgroundColor;
-        
     }
 
     public void setBackgroundColor(Color backgroundColor) {
@@ -84,7 +80,5 @@ public class OptionsModel {
     public void setPageSize(int pageSize) {
         this.pageSize = pageSize;
     }
-    
-    
 
 }

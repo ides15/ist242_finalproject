@@ -47,7 +47,7 @@ public class OptionsView extends JPanel {
         fontSizeLabel = new JLabel("Choose the font size: ");
         pageSizeLabel = new JLabel("Choose the page size: ");
         summaryLabel = new JLabel("No options selected.");
-        
+                
         backgroundColorLabel = new JLabel("Background Color:");
         
         fontSize = new JSlider(JSlider.HORIZONTAL, 1, 10, 5);

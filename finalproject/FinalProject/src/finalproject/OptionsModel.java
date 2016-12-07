@@ -37,14 +37,29 @@ public class OptionsModel {
     
     public String getInfo() {
         
+        
+        System.out.println(getBackgroundColor());
+        
         return "Background color: " + getBackgroundColor() 
                 + ", font size: " + getFontSize() 
                 + ", page size: " + getPageSize();
         
     }
 
-    public Color getBackgroundColor() {
-        return backgroundColor;
+    public String getBackgroundColor() {
+        
+        if(String.valueOf(backgroundColor).equals("java.awt.Color[r=255,g=0,b=0]"))
+            return "Red";
+        
+        if(String.valueOf(backgroundColor).equals("java.awt.Color[r=0,g=255,b=0]"))
+            return "Green";
+        
+        if(String.valueOf(backgroundColor).equals("java.awt.Color[r=0,g=0,b=255]"))
+            return "Blue";
+        
+        else
+            return "White";
+        
     }
 
     public void setBackgroundColor(Color backgroundColor) {

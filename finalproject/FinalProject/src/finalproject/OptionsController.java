@@ -52,6 +52,7 @@ public class RedButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             
             optionsView.changeBackgroundRed();
+            optionsModel.setBackgroundColor(Color.RED);
         
         
         }
@@ -63,6 +64,7 @@ public class BlueButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             
             optionsView.changeBackgroundBlue();
+            optionsModel.setBackgroundColor(Color.BLUE);
         
         
         }
@@ -75,6 +77,7 @@ public class GreenButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             
             optionsView.changeBackgroundGreen();
+            optionsModel.setBackgroundColor(Color.GREEN);
         
         
         }

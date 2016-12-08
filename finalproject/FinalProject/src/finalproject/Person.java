@@ -29,16 +29,7 @@ public class Person {
     
     public Person(Database db) {
         
-        name = "John Ide";
-        age = 20;
-        address = "8514 Oakford Dr.";
-        email = "ide.johnc@gmail.com";
-        username = "ide.johnc";
-        password = "password";
-        company = "PSU";
-        taxesPercent = 0.95;
-        salary = 10.00;
-        hours = 10.00;
+        db = new Database();
         
     }
     
@@ -66,7 +57,9 @@ public class Person {
     }
     
     public void setSalary(double salary) {
-        this.salary = salary;
+        
+        
+        
     }
     
     public double getHours() {
@@ -74,7 +67,9 @@ public class Person {
     }
     
     public void setHours(double hours) {
-        this.hours = hours;
+        
+        
+        
     }
 
     public String getName() {
@@ -82,7 +77,9 @@ public class Person {
     }
 
     public void setName(String name) {
-        this.name = name;
+        
+        
+        
     }
 
     public int getAge() {
@@ -90,7 +87,9 @@ public class Person {
     }
 
     public void setAge(int age) {
-        this.age = age;
+        
+        
+        
     }
 
     public String getAddress() {
@@ -98,7 +97,9 @@ public class Person {
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        
+        
+        
     }
 
     public String getEmail() {
@@ -106,7 +107,9 @@ public class Person {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        
+        
+        
     }
 
     public String getUsername() {
@@ -114,7 +117,9 @@ public class Person {
     }
 
     public void setUsername(String username) {
+        
         this.username = username;
+        
     }
 
     public String getPassword() {

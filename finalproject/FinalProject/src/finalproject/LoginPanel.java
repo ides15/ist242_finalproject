@@ -91,8 +91,8 @@ public class LoginPanel extends JPanel implements ActionListener {
                 db.setVerified(true);
                 
                 user = new Person(db);
-                db.setUser(usernameTextField.getText(), user);
-                                
+                user.setUsername(usernameTextField.getText());
+                                                
             }
             
             else {

@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.text.StyleConstants;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -49,7 +48,7 @@ public class NavController {
         optionsView = new OptionsView(optionsModel);
         optionsModel = new OptionsModel();
         optionsController = new OptionsController(optionsModel, optionsView);
-        profilePanel = new ProfilePanel(user);
+        profilePanel = new ProfilePanel(user, db);
         payrollPanel = new PayrollPanel(user);
         
         backgroundColor = Color.WHITE;

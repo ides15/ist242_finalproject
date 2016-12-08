@@ -37,14 +37,10 @@ public class ProfilePanel extends JPanel implements ActionListener {
     
     public Integer INTage;
     public String STRINGage;
-    
-    private Person person;
 
-    public ProfilePanel(Person person) {
+    public ProfilePanel(Person person, Database db) {
         
         setLayout(null);
-        
-        this.person = person;
         
         userLabel = new JLabel("User: ");
         passwordLabel = new JLabel("Password: ");
@@ -54,7 +50,7 @@ public class ProfilePanel extends JPanel implements ActionListener {
         addressLabel = new JLabel("Address: ");
         dataSavedLabel = new JLabel();
         
-        userTextField = new JTextField(person.getUsername());
+        userTextField = new JTextField(db.getUser("ide.johnc"));
         passTextField = new JTextField(person.getPassword());
         emailTextField = new JTextField(person.getEmail());
         nameTextField = new JTextField(person.getName());
@@ -104,18 +100,18 @@ public class ProfilePanel extends JPanel implements ActionListener {
         dataSavedLabel.setBounds(500, 375, 100, 30);
         
     }
-
+    
     @Override
     public void actionPerformed(ActionEvent ae) {
         
-        STRINGage = ageTextField.getText();
-        INTage = Integer.parseInt(STRINGage);
-        
-        person.db.updateUser(userTextField.getText(), nameTextField.getText(), 
-                INTage, addressTextField.getText(), emailTextField.getText(), 
-                passTextField.getText());
-        
-        dataSavedLabel.setText("Data Saved.");
+//        STRINGage = ageTextField.getText();
+//        INTage = Integer.parseInt(STRINGage);
+//        
+//        person.db.updateUser(userTextField.getText(), nameTextField.getText(), 
+//                INTage, addressTextField.getText(), emailTextField.getText(), 
+//                passTextField.getText());
+//        
+//        dataSavedLabel.setText("Data Saved.");
                 
     }
     

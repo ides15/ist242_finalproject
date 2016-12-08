@@ -89,52 +89,28 @@ public class Database {
         
     }
     
-    public void setUser(String username, Person person) {
+    public String getUser(String username) {
         
         try {
             
-            String SQL = "select * from Person where username = '" + username + "'";
+            String SQL = "select username from Person where username = '" + username + "'";
             
             Statement stmt = con.createStatement();
         
             ResultSet rs = stmt.executeQuery(SQL);
             
-            while(rs.next()) {
-                
-                String name = rs.getString("name");
-                person.setName(name);
-                                
-                int age = rs.getInt("age");
-                person.setAge(age);
-                                
-                String address = rs.getString("address");
-                person.setAddress(address);
-                                
-                String email = rs.getString("email");
-                person.setEmail(email);
-                
-                String user = rs.getString("username");
-                person.setUsername(user);
-                
-                String pass = rs.getString("password");
-                person.setPassword(pass);
-                
-                String company = rs.getString("company");
-                person.setCompany(company);
-                
-                double salary = rs.getDouble("salary");
-                person.setSalary(salary);
-                
-                double hours = rs.getDouble("hours");
-                person.setHours(hours);
-                                
-            }
+            rs.next();
+            String user = rs.getString("username");
+            
+            System.out.println("Username from db: " + user);
+            return user;
             
         }
         
         catch(SQLException err) {
             
             System.out.println(err.getMessage());
+            return "";
             
         }
         
@@ -147,33 +123,3 @@ public class Database {
     }
     
 }
-
-      
-//            Statement stmt = con.createStatement();
-//            String SQL = "select password from Person where username = '" + usernameTextField.getText() + "'";
-//            
-//            ResultSet rs = stmt.executeQuery(SQL);
-//            
-//            rs.next();
-//            String test_password = rs.getString("password");
-//            
-//            System.out.println("Username: " + usernameTextField.getText() + ", password: " + test_password);
-            
-//            String SQL = "select * from Person";
-//            
-//            ResultSet rs = stmt.executeQuery(SQL);
-//            
-//            rs.next();
-//            String name = rs.getString("name");
-//            int age = rs.getInt("age");
-//            String address = rs.getString("address");
-//            String email = rs.getString("email");
-//            String user = rs.getString("username");
-//            String pass = rs.getString("password");
-//            String company = rs.getString("company");
-//            double salary = rs.getDouble("salary");
-//            double hours = rs.getDouble("hours");
-//
-//            System.out.println(name + " " + age + " " + address + " " +
-//                    email + " " + user + " " + pass + " " + company + " " + 
-//                    salary + " " + hours);            

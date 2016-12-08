@@ -154,7 +154,11 @@ public class NavController {
                 navView.switchToProfilePanel(profilePanel);
                 profilePanel.userTextField.setText(db.getUser(loginPanel.usernameTextField.getText()));
                 profilePanel.passTextField.setText(db.getPass(loginPanel.passwordTextField.getText()));
-            
+                profilePanel.addressTextField.setText(db.getAddress(loginPanel.usernameTextField.getText()));
+                profilePanel.emailTextField.setText(db.getEmail(loginPanel.usernameTextField.getText()));
+                profilePanel.nameTextField.setText(db.getName(loginPanel.usernameTextField.getText()));
+                profilePanel.ageTextField.setText(db.getAge(loginPanel.usernameTextField.getText()));
+                
             }
             
             else

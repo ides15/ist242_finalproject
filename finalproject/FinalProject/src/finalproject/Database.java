@@ -22,6 +22,7 @@ public class Database {
     
     public String user = null;
     public String pass = null;
+    public String person = null;
     
     public Database() {
         
@@ -42,6 +43,12 @@ public class Database {
             System.out.println(err.getMessage());
             
         }
+        
+    }
+    
+    public void setPerson(String username) {
+        
+        this.person = username;
         
     }
     
@@ -104,7 +111,7 @@ public class Database {
             
             setPass(pass_word);
             
-            String SQL = "select password from Person where username = '" + this.pass + "'";
+            String SQL = "select password from Person where password = '" + this.pass + "'";
             
             Statement stmt = con.createStatement();
             
@@ -160,6 +167,110 @@ public class Database {
         
     }
     
+    public String getAddress(String username) {
+        
+        try {
+            
+            String SQL = "select address from Person where username = '" + username + "'";
+        
+            Statement stmt = con.createStatement();
+            
+            ResultSet rs = stmt.executeQuery(SQL);
+            
+            rs.next();
+            String address = rs.getString("address");
+            
+            return address;
+            
+        }
+        
+        catch(SQLException err) {
+            
+            System.out.println(err.getMessage());
+            return "";
+            
+        }
+        
+    }
+    
+    public String getEmail(String username) {
+        
+        try {
+            
+            String SQL = "select email from Person where username = '" + username + "'";
+        
+            Statement stmt = con.createStatement();
+            
+            ResultSet rs = stmt.executeQuery(SQL);
+            
+            rs.next();
+            String email = rs.getString("email");
+            
+            return email;
+            
+        }
+        
+        catch(SQLException err) {
+            
+            System.out.println(err.getMessage());
+            return "";
+            
+        }
+        
+    }
+    
+    public String getName(String username) {
+        
+        try {
+            
+            String SQL = "select name from Person where username = '" + username + "'";
+        
+            Statement stmt = con.createStatement();
+            
+            ResultSet rs = stmt.executeQuery(SQL);
+            
+            rs.next();
+            String name = rs.getString("name");
+            
+            return name;
+            
+        }
+        
+        catch(SQLException err) {
+            
+            System.out.println(err.getMessage());
+            return "";
+            
+        }
+        
+    }
+    
+    public String getAge(String username) {
+        
+        try {
+            
+            String SQL = "select age from Person where username = '" + username + "'";
+        
+            Statement stmt = con.createStatement();
+            
+            ResultSet rs = stmt.executeQuery(SQL);
+            
+            rs.next();
+            String age = rs.getString("age").toString();
+            
+            return age;
+            
+        }
+        
+        catch(SQLException err) {
+            
+            System.out.println(err.getMessage());
+            return "";
+            
+        }
+        
+    }
+        
     public void setVerified(boolean verified) {
         
         this.verified = verified;

@@ -25,8 +25,6 @@ public class LoginPanel extends JPanel implements ActionListener {
     public JTextField usernameTextField, passwordTextField;
     private JButton createUserButton, submitButton;
     
-    public Person user;
-    
     public LoginPanel(Database db) {
         
         this.db = db;
@@ -89,10 +87,8 @@ public class LoginPanel extends JPanel implements ActionListener {
                 add(resultLabel);
                 resultLabel.setBounds(350, 350, 300, 30);
                 db.setVerified(true);
-                
-                user = new Person(db);
-                user.setUsername(usernameTextField.getText());
-                                                                
+                db.setPerson(usernameTextField.getText());
+                   // sets db.person to the username                
             }
             
             else {

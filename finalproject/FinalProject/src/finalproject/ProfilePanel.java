@@ -51,15 +51,15 @@ public class ProfilePanel extends JPanel implements ActionListener {
         dataSavedLabel = new JLabel();
         
         userTextField = new JTextField();
-        passTextField = new JTextField(person.getPassword());
-        emailTextField = new JTextField(person.getEmail());
-        nameTextField = new JTextField(person.getName());
+        passTextField = new JTextField();
+        emailTextField = new JTextField();
+        nameTextField = new JTextField();
         
         INTage = person.getAge();
         STRINGage = INTage.toString();
         ageTextField = new JTextField(STRINGage);
         
-        addressTextField = new JTextField(person.getAddress());
+        addressTextField = new JTextField();
         
         saveButton = new JButton("Save");
         saveButton.addActionListener(this);

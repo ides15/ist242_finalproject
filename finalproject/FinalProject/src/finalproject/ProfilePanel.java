@@ -37,10 +37,16 @@ public class ProfilePanel extends JPanel implements ActionListener {
     
     public Integer INTage;
     public String STRINGage;
+    
+    public Database db;
+    public Person person;
 
     public ProfilePanel(Person person, Database db) {
         
         setLayout(null);
+        
+        this.person = person;
+        this.db = db;
         
         userLabel = new JLabel("User: ");
         passwordLabel = new JLabel("Password: ");
@@ -50,16 +56,16 @@ public class ProfilePanel extends JPanel implements ActionListener {
         addressLabel = new JLabel("Address: ");
         dataSavedLabel = new JLabel();
         
-        userTextField = new JTextField();
-        passTextField = new JTextField();
-        emailTextField = new JTextField();
-        nameTextField = new JTextField();
+        userTextField = new JTextField("ide.johnc");
+        passTextField = new JTextField("");
+        emailTextField = new JTextField("");
+        nameTextField = new JTextField("");
         
         INTage = person.getAge();
         STRINGage = INTage.toString();
         ageTextField = new JTextField(STRINGage);
         
-        addressTextField = new JTextField();
+        addressTextField = new JTextField("");
         
         saveButton = new JButton("Save");
         saveButton.addActionListener(this);
@@ -97,7 +103,7 @@ public class ProfilePanel extends JPanel implements ActionListener {
         add(saveButton);
         saveButton.setBounds(350, 375, 100, 30);
         add(dataSavedLabel);
-        dataSavedLabel.setBounds(500, 375, 100, 30);
+        dataSavedLabel.setBounds(500, 375, 500, 30);
         
     }
     
@@ -106,12 +112,13 @@ public class ProfilePanel extends JPanel implements ActionListener {
         
 //        STRINGage = ageTextField.getText();
 //        INTage = Integer.parseInt(STRINGage);
-//        
+//                
 //        person.db.updateUser(userTextField.getText(), nameTextField.getText(), 
 //                INTage, addressTextField.getText(), emailTextField.getText(), 
 //                passTextField.getText());
-//        
-//        dataSavedLabel.setText("Data Saved.");
+        
+        dataSavedLabel.setText("Data Saved (not actually saved, not finished"
+                + " with this part yet).");
                 
     }
     

@@ -26,12 +26,12 @@ public class ProfilePanel extends JPanel implements ActionListener {
     private JLabel addressLabel;
     private JLabel dataSavedLabel;
     
-    private JTextField userTextField;
-    private JTextField passTextField;
-    private JTextField emailTextField;
-    private JTextField nameTextField;
-    private JTextField ageTextField;
-    private JTextField addressTextField;
+    public JTextField userTextField;
+    public JTextField passTextField;
+    public JTextField emailTextField;
+    public JTextField nameTextField;
+    public JTextField ageTextField;
+    public JTextField addressTextField;
     
     private JButton saveButton;
     
@@ -50,7 +50,7 @@ public class ProfilePanel extends JPanel implements ActionListener {
         addressLabel = new JLabel("Address: ");
         dataSavedLabel = new JLabel();
         
-        userTextField = new JTextField(db.getUser("ide.johnc"));
+        userTextField = new JTextField();
         passTextField = new JTextField(person.getPassword());
         emailTextField = new JTextField(person.getEmail());
         nameTextField = new JTextField(person.getName());

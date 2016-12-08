@@ -152,6 +152,8 @@ public class NavController {
             
                 profilePanel.setBackground(optionsModel.getBackgroundColor_Color());
                 navView.switchToProfilePanel(profilePanel);
+                profilePanel.userTextField.setText(db.getUser(loginPanel.usernameTextField.getText()));
+                profilePanel.passTextField.setText(db.getPass(loginPanel.passwordTextField.getText()));
             
             }
             

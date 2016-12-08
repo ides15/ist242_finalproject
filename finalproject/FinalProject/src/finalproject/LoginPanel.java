@@ -92,7 +92,7 @@ public class LoginPanel extends JPanel implements ActionListener {
                 
                 user = new Person(db);
                 user.setUsername(usernameTextField.getText());
-                                                
+                                                                
             }
             
             else {

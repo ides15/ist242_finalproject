@@ -20,6 +20,9 @@ public class Database {
     
     public boolean verified;
     
+    public String user = null;
+    public String pass = null;
+    
     public Database() {
         
         verified = false;
@@ -89,20 +92,61 @@ public class Database {
         
     }
     
-    public String getUser(String username) {
+    public void setPass(String password) {
+        
+        this.pass = password;
+        
+    }
+    
+    public String getPass(String pass_word) {
         
         try {
             
-            String SQL = "select username from Person where username = '" + username + "'";
+            setPass(pass_word);
+            
+            String SQL = "select password from Person where username = '" + this.pass + "'";
             
             Statement stmt = con.createStatement();
-        
+            
             ResultSet rs = stmt.executeQuery(SQL);
             
             rs.next();
-            String user = rs.getString("username");
+            String pass_string = rs.getString("password");
             
-            System.out.println("Username from db: " + user);
+            return pass;
+                    
+        }
+        
+        catch(SQLException err) {
+            
+            System.out.println(err.getMessage());
+            return "";
+            
+        }
+        
+    }
+    
+    public void setUser(String username) {
+
+        this.user = username;
+        
+    }
+    
+    public String getUser(String user_name) {
+        
+        try {
+            
+            setUser(user_name); //sorry for the awful variable names, I'm tired
+            
+            String SQL = "select username from Person where username = '" + this.user + "'";
+            
+            Statement stmt = con.createStatement();
+            
+            ResultSet rs = stmt.executeQuery(SQL);
+            
+            rs.next();
+            String user_string = rs.getString("username");
+            
             return user;
             
         }

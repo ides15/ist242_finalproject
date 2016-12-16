@@ -5,6 +5,7 @@
  */
 package finalproject;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -27,6 +28,8 @@ public class CreateUser extends JPanel implements ActionListener {
     public Database db;
     
     public CreateUser(Database db) {
+        
+        super.setBackground(Color.WHITE);
         
         this.db = db;
         
@@ -119,6 +122,8 @@ public class CreateUser extends JPanel implements ActionListener {
                    + "', " + salaryDouble + ", " + hoursDouble + ")";
         
         db.createNewUser(SQL);
+        
+        
         
     }
     

@@ -72,18 +72,9 @@ public class LoginPanel extends JPanel implements ActionListener {
         
         this.createUserPanel = createUserPanel;
         
-        remove(usernameLabel);
-        remove(passwordLabel);
-        remove(usernameTextField);
-        remove(passwordTextField);
-        remove(createUserButton);
-        remove(submitButton);
         add(createUserPanel);
         createUserPanel.setBounds(10, 10, 965, 505);
         
-        revalidate();
-        repaint();
-                        
     }
     
     public void switchToCreateUserPanel(CreateUser createUserPanel) {
@@ -94,6 +85,16 @@ public class LoginPanel extends JPanel implements ActionListener {
         
         addCreateUserPanel(createUserPanel);
         
+        createUserButton.setVisible(false);
+        submitButton.setVisible(false);
+        usernameLabel.setVisible(false);
+        passwordLabel.setVisible(false);
+        usernameTextField.setVisible(false);
+        passwordTextField.setVisible(false);
+        
+        revalidate();
+        repaint();
+                
     }
 
     @Override

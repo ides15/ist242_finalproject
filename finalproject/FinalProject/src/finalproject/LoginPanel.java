@@ -24,8 +24,11 @@ public class LoginPanel extends JPanel implements ActionListener {
     public JLabel resultLabel;
     public JTextField usernameTextField, passwordTextField;
     private JButton createUserButton, submitButton;
+    public CreateUser createUserPanel;
     
     public LoginPanel(Database db) {
+        
+        createUserPanel = new CreateUser(db);
         
         this.db = db;
         
@@ -64,6 +67,34 @@ public class LoginPanel extends JPanel implements ActionListener {
         submitButton.addActionListener(this);
         
     }
+    
+    public void addCreateUserPanel(CreateUser createUserPanel) {
+        
+        this.createUserPanel = createUserPanel;
+        
+        remove(usernameLabel);
+        remove(passwordLabel);
+        remove(usernameTextField);
+        remove(passwordTextField);
+        remove(createUserButton);
+        remove(submitButton);
+        add(createUserPanel);
+        createUserPanel.setBounds(10, 10, 965, 505);
+        
+        revalidate();
+        repaint();
+                        
+    }
+    
+    public void switchToCreateUserPanel(CreateUser createUserPanel) {
+        
+        this.createUserPanel = createUserPanel;
+        
+        System.out.println("switching");
+        
+        addCreateUserPanel(createUserPanel);
+        
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -72,7 +103,7 @@ public class LoginPanel extends JPanel implements ActionListener {
         
         if(event == createUserButton) {
             
-            System.out.println("create user");
+            switchToCreateUserPanel(createUserPanel);
             
         }
         

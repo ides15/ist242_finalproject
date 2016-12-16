@@ -7,6 +7,7 @@ package finalproject;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
@@ -102,6 +103,23 @@ public class Database {
     public void setPass(String password) {
         
         this.pass = password;
+        
+    }
+    
+    public void createNewUser(String SQL) {
+        
+        try {
+            
+            PreparedStatement pstmt = con.prepareStatement(SQL);
+            pstmt.executeUpdate();
+            
+        }
+        
+        catch(SQLException err) {
+            
+            System.out.println(err.getMessage());
+            
+        }
         
     }
     
